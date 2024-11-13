@@ -6,6 +6,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  position: relative;
 
   .locale-change {
     top: 6px;
@@ -56,19 +58,19 @@
   .ant-tabs-tab {
     width: 190px;
     height: 48px;
-    background: #F0F0F0;
+    background: #f0f0f0;
     color: #000000;
     font-size: 16px;
   }
 
-  .ant-tabs-card.ant-tabs-top>.ant-tabs-nav .ant-tabs-tab+.ant-tabs-tab {
+  .ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab {
     margin-left: 0;
     text-align: center;
   }
 
-  .ant-tabs-card>.ant-tabs-nav .ant-tabs-tab {
+  .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
     border: none;
-    background: #F0F0F0;
+    background: #f0f0f0;
   }
 
   .ant-tabs-tab-btn {
@@ -76,11 +78,11 @@
     text-align: center;
   }
 
-  .ant-tabs>.ant-tabs-nav .ant-tabs-nav-operations {
+  .ant-tabs > .ant-tabs-nav .ant-tabs-nav-operations {
     display: none;
   }
 
-  .ant-tabs-card.ant-tabs-top>.ant-tabs-nav .ant-tabs-tab-active {
+  .ant-tabs-card.ant-tabs-top > .ant-tabs-nav .ant-tabs-tab-active {
     border-radius: 8px 8px 0 0;
     background: #fff;
     box-shadow: 0px 4px 4px 0px #00000040;
@@ -93,8 +95,8 @@
     font-weight: 600;
   }
 
-  .ant-tabs>.ant-tabs-nav .ant-tabs-nav-wrap {
-    background: #F0F0F0;
+  .ant-tabs > .ant-tabs-nav .ant-tabs-nav-wrap {
+    background: #f0f0f0;
   }
 }
 
