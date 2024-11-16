@@ -1,9 +1,13 @@
-import { useState } from "react";
-import "./page.less";
-import classNames from "classnames";
-import LoginLogoIcon from "@/assets/logo-light.svg";
-import LoginBackground from "@/assets/login-background.png";
-import { Tabs } from "antd";
+import { useEffect, useState } from 'react';
+import classNames from 'classnames';
+import LoginLogoIcon from '@/assets/logo-light.svg';
+import LoginBackground from '@/assets/login-background.png';
+import { App, Tabs, TabsProps } from 'antd';
+import './page.less';
+import { AccountForm } from './component/account-form';
+import { useGetQrcode, useLoginByWechatCode } from '@/lib/hooks/api/login';
+import useMessageEventListener from '@/lib/hooks/use-message-event-listener';
+import { redirectToRedirectBackURL } from '@/lib/utils/utils';
 
 interface Result {
   code: string;
@@ -11,43 +15,98 @@ interface Result {
 }
 
 function Login() {
-  const [loginMode, setLoginMode] = useState<string>("wechat");
+  const { message: antMessage } = App.useApp();
+  useGetQrcode();
+  const loginByWechatCodeMutation = useLoginByWechatCode();
+
+  const [loading, setLoading] = useState(false);
+  const [loginMode, setLoginMode] = useState('wechat');
+  const message = useMessageEventListener();
   const [qrcodeResult, setQrcodeResult] = useState<Result>({
-    code: "",
-    state: "",
+    code: '',
+    state: '',
   });
+  // 需要绑定手机号
+  const [shouldBindPhone, setShouldBindPhone] = useState(false);
+
+  // 二维码登录获取message
+  useEffect(() => {
+    if (message) {
+      setQrcodeResult(message);
+    }
+  }, [message]);
+
+  // 监听到二维码登录的code，调用登录接口
+  useEffect(() => {
+    if (qrcodeResult.code) {
+      handleLoginByWechatCode();
+    }
+  }, [qrcodeResult]);
+
+  const handleLoginByWechatCode = async () => {
+    if (loading) {
+      return;
+    }
+    setLoading(true);
+
+    const { user } = await loginByWechatCodeMutation.mutateAsync(qrcodeResult);
+    if (user) {
+      redirectToRedirectBackURL();
+    } else {
+      setShouldBindPhone(true);
+      setLoginMode('phone');
+      antMessage.info('请绑定手机号');
+    }
+  };
+
+  const items: TabsProps['items'] = [
+    {
+      key: 'wechat',
+      label: '微信登录',
+      children: (
+        <>
+          {!qrcodeResult.code && (
+            <div id="login-wechat-qrcode" className="flex justify-center"></div>
+          )}
+        </>
+      ),
+    },
+    {
+      key: 'phone',
+      label: '账号登录',
+      children: <AccountForm isBind={shouldBindPhone} />,
+    },
+  ];
 
   return (
-    <div className="page-login">
-      <img className="page-login-background" src={LoginBackground} alt="" />
+    <div className="relative flex h-screen w-screen select-none items-center justify-center overflow-hidden bg-black">
+      <img
+        className="absolute left-1/2 top-0 h-full max-w-none -translate-x-1/2 transform"
+        src={LoginBackground}
+        alt=""
+      />
       <div
         className={classNames(
-          "page-login-form",
-          loginMode === "wechat" && "page-login-form-large"
+          'absolute z-10 box-border min-h-[310px] w-[380px] overflow-hidden rounded-[10px] shadow-[10px_10px_30px_rgba(0,0,0,0.15)] transition-all duration-300',
         )}
       >
-        <h2 className="page-login-title">
+        <h2 className="mb-8 flex items-center justify-center text-[30px] leading-[42px]">
           <img src={LoginLogoIcon} />
         </h2>
-        <div className="page-login-box">
+        <div
+          className={classNames(
+            loginMode === 'wechat' ? 'h-[480px]' : 'h-[310px]',
+            'w-[380px] overflow-hidden rounded-[10px] bg-white transition-all duration-300',
+          )}
+        >
           <Tabs
+            className="login-tabs"
+            items={items}
             type="card"
-            onChange={(loginMode) => {
+            onChange={loginMode => {
               setLoginMode(loginMode);
             }}
-          >
-            <Tabs.TabPane tab="微信登录" key="wechat">
-              {!qrcodeResult.code && (
-                <div
-                  id="login-wechat-qrcode"
-                  className="login-wechat-qrcode"
-                ></div>
-              )}
-            </Tabs.TabPane>
-            <Tabs.TabPane tab="账号登录" key="phone">
-              <div className="page-login-box-phone"></div>
-            </Tabs.TabPane>
-          </Tabs>
+          />
         </div>
       </div>
     </div>

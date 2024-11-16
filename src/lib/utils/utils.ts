@@ -8,3 +8,14 @@ export const getDeviceId = () => {
   }
   return uuid;
 };
+
+export const redirectToRedirectBackURL = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const redirectBackURL = urlParams.get('redirect_back_url');
+
+  if (redirectBackURL) {
+    window.location.href = redirectBackURL;
+  } else {
+    window.location.href = 'https://laiwei.tech/homepage/';
+  }
+}
