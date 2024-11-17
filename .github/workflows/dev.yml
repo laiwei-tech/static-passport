@@ -62,4 +62,4 @@ jobs:
           access-key-secret: '${{ secrets.ACCESS_KEY_SECRET }}'
 
       - name: Upload
-        run: ossutil sync -u --delete -f -j 1000 ./dist/ oss://laiwei-fe-dev/login/
+        run: ossutil sync -u --delete -f -j 1000 ./dist/ oss://laiwei-fe-dev/passport/

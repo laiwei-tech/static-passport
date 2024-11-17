@@ -5,7 +5,7 @@ import obfuscatorPlugin from 'vite-plugin-javascript-obfuscator';
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/login',
+  base: '/passport',
   plugins: [
     react(),
     obfuscatorPlugin({

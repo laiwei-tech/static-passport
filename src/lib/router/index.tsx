@@ -9,6 +9,6 @@ export const router = createBrowserRouter(
     },
   ],
   {
-    basename: '/login',
+    basename: '/passport',
   },
 );
