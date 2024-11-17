@@ -55,7 +55,7 @@ export const AccountForm = ({ isBind }: { isBind: boolean }) => {
           phone: `${values.phone_code} ${values.phone_number}`,
           code: values.code,
         })
-        .then(res => {
+        .then(() => {
           message.success('绑定成功');
           redirectToRedirectBackURL();
         })
@@ -68,7 +68,7 @@ export const AccountForm = ({ isBind }: { isBind: boolean }) => {
           phone: `${values.phone_code} ${values.phone_number}`,
           smsCode: values.code,
         })
-        .then(res => {
+        .then(() => {
           message.success('登录成功');
           redirectToRedirectBackURL();
         })

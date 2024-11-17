@@ -145,6 +145,7 @@ export const useBindPhone = () => {
         provider: {
           case: 'wechatWebsiteApp',
           value: {
+            // @ts-ignore
             phone
           }
         },
