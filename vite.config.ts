@@ -9,6 +9,7 @@ export default defineConfig({
   plugins: [
     react(),
     obfuscatorPlugin({
+      apply: 'build',
       options: {
         debugProtection: true,
         stringArray: true,
