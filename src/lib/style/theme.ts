@@ -21,7 +21,8 @@ export const themeConfig: ThemeConfig = {
     },
     Select: {
       paddingXXS: 0,
-      controlHeight: 40
+      controlHeight: 40,
+      optionSelectedBg: "rgb(237,237,237)"
     }
   }
 };
