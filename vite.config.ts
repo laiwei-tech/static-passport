@@ -10,7 +10,7 @@ export default defineConfig({
     react(),
     obfuscatorPlugin({
       apply: 'build',
-      include: ['src/lib/**/*.js'],
+      include: ['src/lib/**/*.js', 'src/lib/**/*.ts'],
       options: {
         debugProtection: true,
         stringArray: true,
