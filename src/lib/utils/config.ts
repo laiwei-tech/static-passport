@@ -1,7 +1,7 @@
 export const isDev = () => {
   if (
-    window.location.href === "fe.dev.laiwei.tech" ||
-    window.location.href.indexOf("localhost") !== -1
+    window.location.host === "fe.dev.laiwei.tech" ||
+    window.location.host.indexOf("localhost") !== -1
   ) {
     return true;
   }
