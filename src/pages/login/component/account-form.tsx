@@ -56,6 +56,7 @@ export const AccountForm = ({ isBind }: { isBind: boolean }) => {
           code: values.code,
         })
         .then(() => {
+          sessionStorage.setItem('isLoginByPassport', 'true');
           message.success('绑定成功');
           redirectToRedirectBackURL();
         })
@@ -69,6 +70,7 @@ export const AccountForm = ({ isBind }: { isBind: boolean }) => {
           smsCode: values.code,
         })
         .then(() => {
+          sessionStorage.setItem('isLoginByPassport', 'true');
           message.success('登录成功');
           redirectToRedirectBackURL();
         })
