@@ -3,7 +3,7 @@ import { MobileOutlined, LockOutlined } from '@ant-design/icons';
 import { PHONE_CODE } from '@/lib/constant/phone-code';
 import { useCountdown } from '@/lib/hooks/code-countdown';
 import { useBindPhone, useGetSMSCode, useLoginWithSMS } from '@/lib/hooks/api/login';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { redirectToRedirectBackURL } from '@/lib/utils/utils';
 
 export type FieldType = {
@@ -21,6 +21,8 @@ export const AccountForm = ({ isBind }: { isBind: boolean }) => {
   const [loginLoading, setLoginLoading] = useState(false);
   const getSMSCodeMutation = useGetSMSCode();
   const { count, startCountdown, isCounting } = useCountdown(60);
+
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const [form] = Form.useForm<FieldType>();
 
@@ -41,6 +43,7 @@ export const AccountForm = ({ isBind }: { isBind: boolean }) => {
         }
         startCountdown();
         setLoading(false);
+        inputRef.current?.focus();
       })
       .catch(() => {
         setLoading(false);
@@ -110,7 +113,7 @@ export const AccountForm = ({ isBind }: { isBind: boolean }) => {
         >
           <Row gutter={8}>
             <Col span={16}>
-              <Input size="large" prefix={<LockOutlined />} placeholder="请输入验证码" />
+              <Input ref={inputRef} size="large" prefix={<LockOutlined />} placeholder="请输入验证码" />
             </Col>
             <Col span={8}>
               <Button

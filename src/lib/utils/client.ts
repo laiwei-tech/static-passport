@@ -16,7 +16,7 @@ export const connectTransport = (basePath: string) => {
   return createConnectTransport({
     baseUrl: `${getBaseUrl()}/grpc/${basePath}`,
     fetch: (input, init) => {
-      return new Promise((reslove, reject) => {
+      return new Promise((resolve, reject) => {
         axios.request({
           url: `${input}`,
           method: init?.method,
@@ -24,26 +24,17 @@ export const connectTransport = (basePath: string) => {
           data: init?.body,
           withCredentials: true,
         }).then((res) => {
-          // @ts-ignore
-          reslove({
-            ok: true,
-            json() {
-              return res.data;
-            },
+          resolve(new Response(JSON.stringify(res.data), {
             status: res.status,
             statusText: res.statusText,
             headers: new Headers(res.headers as HeadersInit),
-          });
+          }));
         }).catch((res) => {
-          reject({
-            ok: false,
-            json() {
-              return res.data;
-            },
+          resolve(new Response(JSON.stringify(res.data), {
             status: res.status,
             statusText: res.statusText,
             headers: new Headers(res.headers as HeadersInit),
-          });
+          }));
         })
       })
     },
