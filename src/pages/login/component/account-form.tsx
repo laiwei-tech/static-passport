@@ -1,4 +1,4 @@
-import { App, Button, Col, Form, Input, Row, Select } from 'antd';
+import { App, Button, Col, Form, Input, InputRef, Row, Select } from 'antd';
 import { MobileOutlined, LockOutlined } from '@ant-design/icons';
 import { PHONE_CODE } from '@/lib/constant/phone-code';
 import { useCountdown } from '@/lib/hooks/code-countdown';
@@ -22,7 +22,7 @@ export const AccountForm = ({ isBind }: { isBind: boolean }) => {
   const getSMSCodeMutation = useGetSMSCode();
   const { count, startCountdown, isCounting } = useCountdown(60);
 
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<InputRef>(null);
 
   const [form] = Form.useForm<FieldType>();
 

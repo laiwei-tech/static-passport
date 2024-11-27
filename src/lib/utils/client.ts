@@ -30,7 +30,7 @@ export const connectTransport = (basePath: string) => {
             headers: new Headers(res.headers as HeadersInit),
           }));
         }).catch((res) => {
-          resolve(new Response(JSON.stringify(res.data), {
+          reject(new Response(JSON.stringify(res.data), {
             status: res.status,
             statusText: res.statusText,
             headers: new Headers(res.headers as HeadersInit),
