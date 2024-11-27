@@ -81,11 +81,13 @@ function Login() {
 
   return (
     <div className="relative flex h-screen w-screen select-none items-center justify-center overflow-hidden bg-black">
-      <img
-        className="absolute left-1/2 top-0 h-full max-w-none -translate-x-1/2 transform"
-        src={LoginBackground}
-        alt=""
-      />
+      <div className="flex justify-center items-center absolute top-0 h-full">
+        <img
+          className="transform flex-shrink-0 animate-ping-slow origin-center"
+          src={LoginBackground}
+          alt=""
+        />
+      </div>
       <div
         className={classNames(
           'absolute z-10 box-border min-h-[310px] w-[380px] overflow-hidden rounded-[10px] shadow-[10px_10px_30px_rgba(0,0,0,0.15)] transition-all duration-300',
