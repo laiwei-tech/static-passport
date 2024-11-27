@@ -7,7 +7,7 @@ import './page.less';
 import { AccountForm } from './component/account-form';
 import { useGetQrcode, useLoginByWechatCode } from '@/lib/hooks/api/login';
 import useMessageEventListener from '@/lib/hooks/use-message-event-listener';
-import { redirectToRedirectBackURL, storageRedirectBackURL } from '@/lib/utils/utils';
+import { redirectToRedirectBackURL } from '@/lib/utils/utils';
 
 interface Result {
   code: string;
@@ -28,10 +28,6 @@ function Login() {
   });
   // 需要绑定手机号
   const [shouldBindPhone, setShouldBindPhone] = useState(false);
-
-  useEffect(() => {
-    storageRedirectBackURL();
-  }, []);
 
   // 二维码登录获取message
   useEffect(() => {
@@ -55,6 +51,7 @@ function Login() {
 
     const { user } = await loginByWechatCodeMutation.mutateAsync(qrcodeResult);
     if (user) {
+      sessionStorage.setItem('isLoginByPassport', 'true');
       redirectToRedirectBackURL();
     } else {
       setShouldBindPhone(true);

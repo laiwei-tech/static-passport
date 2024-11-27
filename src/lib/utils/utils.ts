@@ -11,21 +11,11 @@ export const getDeviceId = () => {
 
 export const redirectToRedirectBackURL = () => {
   const urlParams = new URLSearchParams(window.location.search);
-  const redirectBackURL = urlParams.get('redirect_back_url') || sessionStorage.getItem('redirect_back_url');
-
-  if (redirectBackURL) {
-    window.location.href = redirectBackURL;
-    sessionStorage.removeItem('redirect_back_url');
-  } else {
-    window.location.href = 'https://laiwei.tech/homepage/';
-  }
-}
-
-export const storageRedirectBackURL = () => {
-  const urlParams = new URLSearchParams(window.location.search);
   const redirectBackURL = urlParams.get('redirect_back_url');
 
   if (redirectBackURL) {
-    sessionStorage.setItem('redirect_back_url', redirectBackURL);
+    window.location.href = redirectBackURL;
+  } else {
+    window.location.href = 'https://laiwei.tech/homepage/';
   }
 }
