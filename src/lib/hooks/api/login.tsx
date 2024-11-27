@@ -35,7 +35,7 @@ export const useGetQrcode = () => {
           const redirectUri = data.value.redirectUri;
           const state = data.value.state;
           WxLogin({
-            self_redirect: true,
+            self_redirect: false,
             appid: result.appId,
             scope: 'snsapi_login',
             redirect_uri: redirectUri,
