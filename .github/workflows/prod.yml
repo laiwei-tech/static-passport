@@ -1,4 +1,4 @@
-name: 部署测试环境
+name: 部署正式环境
 
 on:
   push:
