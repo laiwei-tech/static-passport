@@ -8,6 +8,8 @@ import { AccountForm } from './component/account-form';
 import { useGetQrcode, useLoginByWechatCode } from '@/lib/hooks/api/login';
 import useMessageEventListener from '@/lib/hooks/use-message-event-listener';
 import { redirectToRedirectBackURL } from '@/lib/utils/utils';
+import { useUserLoginInfo } from "@/lib/hooks/user-login-info";
+import { UserInfo } from "./component/user-info";
 
 interface Result {
   code: string;
@@ -17,6 +19,7 @@ interface Result {
 function Login() {
   const { message: antMessage } = App.useApp();
   useGetQrcode();
+  const { isLogined, userInfo } = useUserLoginInfo();
   const loginByWechatCodeMutation = useLoginByWechatCode();
 
   const [loading, setLoading] = useState(false);
@@ -99,17 +102,18 @@ function Login() {
         <div
           className={classNames(
             loginMode === 'wechat' ? 'h-[480px]' : 'h-[310px]',
+            isLogined ? 'h-[180px]' : '',
             'w-[380px] overflow-hidden rounded-[10px] bg-white transition-all duration-300',
           )}
         >
-          <Tabs
+          {isLogined ? <UserInfo userInfo={userInfo} /> : <Tabs
             className="login-tabs"
             items={items}
             type="card"
             onChange={loginMode => {
               setLoginMode(loginMode);
             }}
-          />
+          />}
         </div>
       </div>
     </div>

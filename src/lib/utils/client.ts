@@ -12,7 +12,7 @@ import axios from './axios';
 import { AxiosHeaders } from 'axios';
 import { getHeader } from './header';
 
-export const connectTransport = (basePath: string) => {
+export const connectTransport = (basePath: string, noPrompt: boolean = false) => {
   return createConnectTransport({
     baseUrl: `${getBaseUrl()}/grpc/${basePath}`,
     fetch: (input, init) => {
@@ -23,6 +23,8 @@ export const connectTransport = (basePath: string) => {
           headers: getHeader(`${input}`, init) as unknown as AxiosHeaders,
           data: init?.body,
           withCredentials: true,
+          // @ts-ignore
+          hideErrorMessage: noPrompt,
         }).then((res) => {
           resolve(new Response(JSON.stringify(res.data), {
             status: res.status,
@@ -54,3 +56,6 @@ export const imClient = createClient(ImService, connectTransport('im'));
 export const pushClient = createClient(PushService, connectTransport('push'));
 // 预订接口
 export const bookingClient = createClient(BookingService, connectTransport('booking'));
+// 私有接口（无提示）
+export const privateClientWithoutPrompt = createClient(PrivateService, connectTransport('private', true));
+

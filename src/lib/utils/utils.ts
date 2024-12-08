@@ -26,3 +26,16 @@ export const redirectToRedirectBackURL = async () => {
     window.location.href = 'https://laiwei.tech/homepage/';
   }
 }
+
+export const formatPhone = (phone: string | undefined) => {
+  if (!phone) return '';
+  // 去掉+86前缀
+  const cleanPhone = phone.replace(/^\+86 /, '');
+  // 只显示前三位和后四位，中间用****代替
+  const phoneNumberSplit = cleanPhone.split(' ');
+  console.log(phoneNumberSplit);
+  if (phoneNumberSplit.length === 3) {
+    return `${phoneNumberSplit[0]}****${phoneNumberSplit[2]}`;
+  }
+  return cleanPhone;
+};
