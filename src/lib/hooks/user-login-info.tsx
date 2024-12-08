@@ -7,14 +7,20 @@ export const useUserLoginInfo = () => {
   const [userInfo, setUserInfo] = useState<User | null>(null);
 
   useEffect(() => {
-    privateClientWithoutPrompt.sharedMyUser({}).then(res => {
-      if (res.user) {
-        setIsLogined(true);
-        setUserInfo(res.user);
-      } else {
-        setIsLogined(false);
-      }
-    })
+    const isLoginedInPassport = localStorage.getItem('isLoginedInPassport');
+
+    if (isLoginedInPassport) {
+      privateClientWithoutPrompt.sharedMyUser({}).then(res => {
+        if (res.user) {
+          setIsLogined(true);
+          setUserInfo(res.user);
+        } else {
+          setIsLogined(false);
+        }
+      })
+    } else {
+      setIsLogined(false);
+    }
   }, [])
 
   return {

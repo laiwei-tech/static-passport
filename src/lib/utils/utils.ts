@@ -17,13 +17,12 @@ export const redirectToRedirectBackURL = async () => {
   // 获取code并跳转
   const { passportCode } = await privateClient.sharedCreateSessionLaiweiPassportCode({});
 
-  if (redirectBackURL) {
+  if (redirectBackURL && passportCode) {
+    localStorage.setItem('isLoginedInPassport', 'true');
     // 添加 passportCode 到重定向URL
     const redirectURLWithCode = new URL(redirectBackURL);
     redirectURLWithCode.searchParams.set('passport_code', passportCode);
     window.location.href = redirectURLWithCode.toString();
-  } else {
-    window.location.href = 'https://laiwei.tech/homepage/';
   }
 }
 
