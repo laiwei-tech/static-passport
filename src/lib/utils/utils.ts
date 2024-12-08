@@ -1,4 +1,5 @@
 import { UUID } from "uuidjs";
+import { privateClient } from "./client";
 
 export const getDeviceId = () => {
   let uuid = localStorage.getItem("uuid");
@@ -9,12 +10,18 @@ export const getDeviceId = () => {
   return uuid;
 };
 
-export const redirectToRedirectBackURL = () => {
+export const redirectToRedirectBackURL = async () => {
   const urlParams = new URLSearchParams(window.location.search);
   const redirectBackURL = urlParams.get('redirect_back_url');
 
+  // 获取code并跳转
+  const { passportCode } = await privateClient.sharedCreateSessionLaiweiPassportCode({});
+
   if (redirectBackURL) {
-    window.location.href = redirectBackURL;
+    // 添加 passportCode 到重定向URL
+    const redirectURLWithCode = new URL(redirectBackURL);
+    redirectURLWithCode.searchParams.set('passport_code', passportCode);
+    window.location.href = redirectURLWithCode.toString();
   } else {
     window.location.href = 'https://laiwei.tech/homepage/';
   }

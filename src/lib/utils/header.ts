@@ -1,3 +1,4 @@
+import { ClientInfo_Platform_Enum, ClientInfo_PlatformId_WEB_Enum } from "@/gen/laiweiv1/model_pb";
 import { getBaseUrl } from "./config";
 import getDigest from "./digest";
 import { getDeviceId } from "./utils";
@@ -18,10 +19,10 @@ export function getHeader(input: string, init?: RequestInit) {
 
   let header = {
     ...init?.headers,
-    [platform]: "WEB",
-    [platformId]: "admin",
+    [platform]: ClientInfo_Platform_Enum[ClientInfo_Platform_Enum.WEB],
+    [platformId]: ClientInfo_PlatformId_WEB_Enum[ClientInfo_PlatformId_WEB_Enum.ADMIN],
     [deviceId]: getDeviceId(),
-    [version]: "0.0.1",
+    [version]: "1.0.1",
     [contentDigest]: `laiwei-v1=${digest}`,
     "Content-Type": "application/json",
   };
