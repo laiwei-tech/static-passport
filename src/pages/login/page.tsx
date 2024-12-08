@@ -101,8 +101,7 @@ function Login() {
         </h2>
         <div
           className={classNames(
-            loginMode === 'wechat' ? 'h-[480px]' : 'h-[310px]',
-            isLogined ? 'h-[180px]' : '',
+            isLogined ? 'h-[180px]' : loginMode === 'wechat' ? 'h-[480px]' : 'h-[310px]',
             'w-[380px] overflow-hidden rounded-[10px] bg-white transition-all duration-300',
           )}
         >
