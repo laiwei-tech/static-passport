@@ -20,7 +20,7 @@ export function getHeader(input: string, init?: RequestInit) {
   let header = {
     ...init?.headers,
     [platform]: ClientInfo_Platform_Enum[ClientInfo_Platform_Enum.WEB],
-    [platformId]: ClientInfo_PlatformId_WEB_Enum[ClientInfo_PlatformId_WEB_Enum.ADMIN],
+    [platformId]: ClientInfo_PlatformId_WEB_Enum[ClientInfo_PlatformId_WEB_Enum.PASSPORT],
     [deviceId]: getDeviceId(),
     [version]: "1.0.1",
     [contentDigest]: `laiwei-v1=${digest}`,
