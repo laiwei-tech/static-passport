@@ -11,7 +11,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file wechat/third_party_platform.proto.
  */
 export const file_wechat_third_party_platform: GenFile = /*@__PURE__*/
-  fileDesc("CiF3ZWNoYXQvdGhpcmRfcGFydHlfcGxhdGZvcm0ucHJvdG8SBndlY2hhdCKvDgoSVGhpcmRQYXJ0eVBsYXRmb3JtGpgOCglDb21wb25lbnQaoQMKEUFwaUNvbXBvbmVudFRva2VuGssCCgdSZXF1ZXN0ElcKD2NvbXBvbmVudF9hcHBpZBgBIAEoCUI+moSeAzlqc29uOiJhcHBpZCJwYXJhbV9pbjoiYm9keSJwYXJhbV9jb2RlYzoiY29tcG9uZW50X2FwcF9pZCISbQoTY29tcG9uZW50X2FwcHNlY3JldBgCIAEoCUJQmoSeA0tqc29uOiJjb21wb25lbnRfYXBwc2VjcmV0InBhcmFtX2luOiJib2R5InBhcmFtX2NvZGVjOiJjb21wb25lbnRfYXBwX3NlY3JldCISeAoXY29tcG9uZW50X3ZlcmlmeV90aWNrZXQYAyABKAlCV5qEngNSanNvbjoiY29tcG9uZW50X3ZlcmlmeV90aWNrZXQicGFyYW1faW46ImJvZHkicGFyYW1fY29kZWM6ImNvbXBvbmVudF92ZXJpZnlfdGlja2V0Iho+CghSZXNwb25zZRIeChZjb21wb25lbnRfYWNjZXNzX3Rva2VuGAEgASgJEhIKCmV4cGlyZXNfaW4YAiABKAUaqgIKFEFwaUNyZWF0ZVByZWF1dGhjb2RlGtoBCgdSZXF1ZXN0EnYKFmNvbXBvbmVudF9hY2Nlc3NfdG9rZW4YASABKAlCVpqEngNRanNvbjoiY29tcG9uZW50X2FjY2Vzc190b2tlbiJwYXJhbV9pbjoicXVlcnkicGFyYW1fY29kZWM6ImNvbXBvbmVudF9hY2Nlc3NfdG9rZW4iElcKD2NvbXBvbmVudF9hcHBpZBgCIAEoCUI+moSeAzlqc29uOiJhcHBpZCJwYXJhbV9pbjoiYm9keSJwYXJhbV9jb2RlYzoiY29tcG9uZW50X2FwcF9pZCIaNQoIUmVzcG9uc2USFQoNcHJlX2F1dGhfY29kZRgBIAEoCRISCgpleHBpcmVzX2luGAIgASgFGrkICgxBcGlRdWVyeUF1dGgaxQIKB1JlcXVlc3QSdgoWY29tcG9uZW50X2FjY2Vzc190b2tlbhgBIAEoCUJWmoSeA1Fqc29uOiJjb21wb25lbnRfYWNjZXNzX3Rva2VuInBhcmFtX2luOiJxdWVyeSJwYXJhbV9jb2RlYzoiY29tcG9uZW50X2FjY2Vzc190b2tlbiISVwoPY29tcG9uZW50X2FwcGlkGAIgASgJQj6ahJ4DOWpzb246ImFwcGlkInBhcmFtX2luOiJib2R5InBhcmFtX2NvZGVjOiJjb21wb25lbnRfYXBwX2lkIhJpChJhdXRob3JpemF0aW9uX2NvZGUYAyABKAlCTZqEngNIanNvbjoiYXV0aG9yaXphdGlvbl9jb2RlInBhcmFtX2luOiJib2R5InBhcmFtX2NvZGVjOiJhdXRob3JpemF0aW9uX2NvZGUiGuAFCghSZXNwb25zZRJoChJhdXRob3JpemF0aW9uX2luZm8YASABKAsyTC53ZWNoYXQuVGhpcmRQYXJ0eVBsYXRmb3JtLkNvbXBvbmVudC5BcGlRdWVyeUF1dGguUmVzcG9uc2UuQXV0aG9yaXphdGlvbkluZm8a6QQKEUF1dGhvcml6YXRpb25JbmZvEhgKEGF1dGhvcml6ZXJfYXBwaWQYASABKAkSHwoXYXV0aG9yaXplcl9hY2Nlc3NfdG9rZW4YAiABKAkSFwoKZXhwaXJlc19pbhgDIAEoBUgAiAEBEiUKGGF1dGhvcml6ZXJfcmVmcmVzaF90b2tlbhgEIAEoCUgBiAEBEmgKCWZ1bmNfaW5mbxgFIAMoCzJVLndlY2hhdC5UaGlyZFBhcnR5UGxhdGZvcm0uQ29tcG9uZW50LkFwaVF1ZXJ5QXV0aC5SZXNwb25zZS5BdXRob3JpemF0aW9uSW5mby5GdW5jSW5mbxrCAgoIRnVuY0luZm8SiAEKEmZ1bmNzY29wZV9jYXRlZ29yeRgBIAMoCzJsLndlY2hhdC5UaGlyZFBhcnR5UGxhdGZvcm0uQ29tcG9uZW50LkFwaVF1ZXJ5QXV0aC5SZXNwb25zZS5BdXRob3JpemF0aW9uSW5mby5GdW5jSW5mby5GdW5jc2NvcGVDYXRlZ29yeUVudHJ5GhMKBVNjb3BlEgoKAmlkGAEgASgFGpUBChZGdW5jc2NvcGVDYXRlZ29yeUVudHJ5EgsKA2tleRgBIAEoCRJqCgV2YWx1ZRgCIAEoCzJbLndlY2hhdC5UaGlyZFBhcnR5UGxhdGZvcm0uQ29tcG9uZW50LkFwaVF1ZXJ5QXV0aC5SZXNwb25zZS5BdXRob3JpemF0aW9uSW5mby5GdW5jSW5mby5TY29wZToCOAFCDQoLX2V4cGlyZXNfaW5CGwoZX2F1dGhvcml6ZXJfcmVmcmVzaF90b2tlbkInWiVzdmMtbGFpd2VpL3Byb3RvL2dlbi9nby93ZWNoYXQ7d2VjaGF0YgZwcm90bzM", [file_tagger_tagger]);
+  fileDesc("CiF3ZWNoYXQvdGhpcmRfcGFydHlfcGxhdGZvcm0ucHJvdG8SBndlY2hhdCK1LgoSVGhpcmRQYXJ0eVBsYXRmb3JtGpwCCg9TdGFydFB1c2hUaWNrZXQa2wEKB1JlcXVlc3QSYQoPY29tcG9uZW50X2FwcGlkGAEgASgJQkiahJ4DQ2pzb246ImNvbXBvbmVudF9hcHBpZCJwYXJhbV9pbjoiYm9keSJwYXJhbV9jb2RlYzoiY29tcG9uZW50X2FwcF9pZCISbQoTY29tcG9uZW50X2FwcHNlY3JldBgCIAEoCUJQmoSeA0tqc29uOiJjb21wb25lbnRfYXBwc2VjcmV0InBhcmFtX2luOiJib2R5InBhcmFtX2NvZGVjOiJjb21wb25lbnRfYXBwX3NlY3JldCIaKwoIUmVzcG9uc2USDwoHZXJyY29kZRgBIAEoBRIOCgZlcnJtc2cYAiABKAkazwIKDkdldFByZUF1dGhDb2RlGuQBCgdSZXF1ZXN0EnYKFmNvbXBvbmVudF9hY2Nlc3NfdG9rZW4YASABKAlCVpqEngNRanNvbjoiY29tcG9uZW50X2FjY2Vzc190b2tlbiJwYXJhbV9pbjoicXVlcnkicGFyYW1fY29kZWM6ImNvbXBvbmVudF9hY2Nlc3NfdG9rZW4iEmEKD2NvbXBvbmVudF9hcHBpZBgCIAEoCUJImoSeA0Nqc29uOiJjb21wb25lbnRfYXBwaWQicGFyYW1faW46ImJvZHkicGFyYW1fY29kZWM6ImNvbXBvbmVudF9hcHBfaWQiGlYKCFJlc3BvbnNlEg8KB2VycmNvZGUYASABKAUSDgoGZXJybXNnGAIgASgJEhUKDXByZV9hdXRoX2NvZGUYAyABKAkSEgoKZXhwaXJlc19pbhgEIAEoBRqkBAoYR2V0QXV0aG9yaXplckFjY2Vzc1Rva2VuGoIDCgdSZXF1ZXN0EnYKFmNvbXBvbmVudF9hY2Nlc3NfdG9rZW4YASABKAlCVpqEngNRanNvbjoiY29tcG9uZW50X2FjY2Vzc190b2tlbiJwYXJhbV9pbjoicXVlcnkicGFyYW1fY29kZWM6ImNvbXBvbmVudF9hY2Nlc3NfdG9rZW4iEmEKD2NvbXBvbmVudF9hcHBpZBgCIAEoCUJImoSeA0Nqc29uOiJjb21wb25lbnRfYXBwaWQicGFyYW1faW46ImJvZHkicGFyYW1fY29kZWM6ImNvbXBvbmVudF9hcHBfaWQiEkUKEGF1dGhvcml6ZXJfYXBwaWQYAyABKAlCK5qEngMmanNvbjoiYXV0aG9yaXplcl9hcHBpZCJwYXJhbV9pbjoiYm9keSISVQoYYXV0aG9yaXplcl9yZWZyZXNoX3Rva2VuGAQgASgJQjOahJ4DLmpzb246ImF1dGhvcml6ZXJfcmVmcmVzaF90b2tlbiJwYXJhbV9pbjoiYm9keSIaggEKCFJlc3BvbnNlEg8KB2VycmNvZGUYASABKAUSDgoGZXJybXNnGAIgASgJEh8KF2F1dGhvcml6ZXJfYWNjZXNzX3Rva2VuGAQgASgJEhIKCmV4cGlyZXNfaW4YBSABKAUSIAoYYXV0aG9yaXplcl9yZWZyZXNoX3Rva2VuGAYgASgJGrQIChlHZXRBdXRob3JpemVyUmVmcmVzaFRva2VuGs8CCgdSZXF1ZXN0EnYKFmNvbXBvbmVudF9hY2Nlc3NfdG9rZW4YASABKAlCVpqEngNRanNvbjoiY29tcG9uZW50X2FjY2Vzc190b2tlbiJwYXJhbV9pbjoicXVlcnkicGFyYW1fY29kZWM6ImNvbXBvbmVudF9hY2Nlc3NfdG9rZW4iEmEKD2NvbXBvbmVudF9hcHBpZBgCIAEoCUJImoSeA0Nqc29uOiJjb21wb25lbnRfYXBwaWQicGFyYW1faW46ImJvZHkicGFyYW1fY29kZWM6ImNvbXBvbmVudF9hcHBfaWQiEmkKEmF1dGhvcml6YXRpb25fY29kZRgDIAEoCUJNmoSeA0hqc29uOiJhdXRob3JpemF0aW9uX2NvZGUicGFyYW1faW46ImJvZHkicGFyYW1fY29kZWM6ImF1dGhvcml6YXRpb25fY29kZSIaxAUKCFJlc3BvbnNlEg8KB2VycmNvZGUYASABKAUSDgoGZXJybXNnGAIgASgJEmsKEmF1dGhvcml6YXRpb25faW5mbxgDIAEoCzJPLndlY2hhdC5UaGlyZFBhcnR5UGxhdGZvcm0uR2V0QXV0aG9yaXplclJlZnJlc2hUb2tlbi5SZXNwb25zZS5BdXRob3JpemF0aW9uSW5mbxqpBAoRQXV0aG9yaXphdGlvbkluZm8SGAoQYXV0aG9yaXplcl9hcHBpZBgBIAEoCRIkChdhdXRob3JpemVyX2FjY2Vzc190b2tlbhgCIAEoCUgAiAEBEhcKCmV4cGlyZXNfaW4YAyABKAVIAYgBARIlChhhdXRob3JpemVyX3JlZnJlc2hfdG9rZW4YBCABKAlIAogBARJrCglmdW5jX2luZm8YBSADKAsyWC53ZWNoYXQuVGhpcmRQYXJ0eVBsYXRmb3JtLkdldEF1dGhvcml6ZXJSZWZyZXNoVG9rZW4uUmVzcG9uc2UuQXV0aG9yaXphdGlvbkluZm8uRnVuY0luZm8a3gEKCEZ1bmNJbmZvEoYBChJmdW5jc2NvcGVfY2F0ZWdvcnkYASABKAsyai53ZWNoYXQuVGhpcmRQYXJ0eVBsYXRmb3JtLkdldEF1dGhvcml6ZXJSZWZyZXNoVG9rZW4uUmVzcG9uc2UuQXV0aG9yaXphdGlvbkluZm8uRnVuY0luZm8uRnVuY3Njb3BlQ2F0ZWdvcnkaSQoRRnVuY3Njb3BlQ2F0ZWdvcnkSCgoCaWQYASABKAUSDAoEdHlwZRgCIAEoBRIMCgRuYW1lGAMgASgJEgwKBGRlc2MYBCABKAlCGgoYX2F1dGhvcml6ZXJfYWNjZXNzX3Rva2VuQg0KC19leHBpcmVzX2luQhsKGV9hdXRob3JpemVyX3JlZnJlc2hfdG9rZW4a0gMKF0dldENvbXBvbmVudEFjY2Vzc1Rva2VuGtUCCgdSZXF1ZXN0EmEKD2NvbXBvbmVudF9hcHBpZBgBIAEoCUJImoSeA0Nqc29uOiJjb21wb25lbnRfYXBwaWQicGFyYW1faW46ImJvZHkicGFyYW1fY29kZWM6ImNvbXBvbmVudF9hcHBfaWQiEm0KE2NvbXBvbmVudF9hcHBzZWNyZXQYAiABKAlCUJqEngNLanNvbjoiY29tcG9uZW50X2FwcHNlY3JldCJwYXJhbV9pbjoiYm9keSJwYXJhbV9jb2RlYzoiY29tcG9uZW50X2FwcF9zZWNyZXQiEngKF2NvbXBvbmVudF92ZXJpZnlfdGlja2V0GAMgASgJQleahJ4DUmpzb246ImNvbXBvbmVudF92ZXJpZnlfdGlja2V0InBhcmFtX2luOiJib2R5InBhcmFtX2NvZGVjOiJjb21wb25lbnRfdmVyaWZ5X3RpY2tldCIaXwoIUmVzcG9uc2USDwoHZXJyY29kZRgBIAEoBRIOCgZlcnJtc2cYAiABKAkSHgoWY29tcG9uZW50X2FjY2Vzc190b2tlbhgDIAEoCRISCgpleHBpcmVzX2luGAQgASgFGtEEChZUaGlyZHBhcnR5Q29kZTJTZXNzaW9uGsIDCgdSZXF1ZXN0EnYKFmNvbXBvbmVudF9hY2Nlc3NfdG9rZW4YASABKAlCVpqEngNRanNvbjoiY29tcG9uZW50X2FjY2Vzc190b2tlbiJwYXJhbV9pbjoicXVlcnkicGFyYW1fY29kZWM6ImNvbXBvbmVudF9hY2Nlc3NfdG9rZW4iEmEKD2NvbXBvbmVudF9hcHBpZBgCIAEoCUJImoSeA0Nqc29uOiJjb21wb25lbnRfYXBwaWQicGFyYW1faW46ImJvZHkicGFyYW1fY29kZWM6ImNvbXBvbmVudF9hcHBfaWQiEjAKBWFwcGlkGAMgASgJQiGahJ4DHGpzb246ImFwcGlkInBhcmFtX2luOiJxdWVyeSISNAoHanNfY29kZRgEIAEoCUIjmoSeAx5qc29uOiJqc19jb2RlInBhcmFtX2luOiJxdWVyeSISdAoKZ3JhbnRfdHlwZRgFIAEoCUJgmoSeA1tqc29uOiJncmFudF90eXBlInBhcmFtX2luOiJxdWVyeSJwYXJhbV9jb2RlYzoiY29uc3RhbnQicGFyYW1fY29kZWNfYXJnOiJhdXRob3JpemF0aW9uX2NvZGUiGnIKCFJlc3BvbnNlEg8KB2VycmNvZGUYASABKAUSDgoGZXJybXNnGAIgASgJEhMKC3Nlc3Npb25fa2V5GAMgASgJEg4KBm9wZW5pZBgEIAEoCRIUCgd1bmlvbmlkGAUgASgJSACIAQFCCgoIX3VuaW9uaWQaphQKEUdldEF1dGhvcml6ZXJJbmZvGpcCCgdSZXF1ZXN0EmIKDGFjY2Vzc190b2tlbhgBIAEoCUJMmoSeA0dqc29uOiJhY2Nlc3NfdG9rZW4icGFyYW1faW46InF1ZXJ5InBhcmFtX2NvZGVjOiJjb21wb25lbnRfYWNjZXNzX3Rva2VuIhJhCg9jb21wb25lbnRfYXBwaWQYAiABKAlCSJqEngNDanNvbjoiY29tcG9uZW50X2FwcGlkInBhcmFtX2luOiJib2R5InBhcmFtX2NvZGVjOiJjb21wb25lbnRfYXBwX2lkIhJFChBhdXRob3JpemVyX2FwcGlkGAMgASgJQiuahJ4DJmpzb246ImF1dGhvcml6ZXJfYXBwaWQicGFyYW1faW46ImJvZHkiGvYRCghSZXNwb25zZRIPCgdlcnJjb2RlGAEgASgFEg4KBmVycm1zZxgCIAEoCRJdCg9hdXRob3JpemVyX2luZm8YAyABKAsyRC53ZWNoYXQuVGhpcmRQYXJ0eVBsYXRmb3JtLkdldEF1dGhvcml6ZXJJbmZvLlJlc3BvbnNlLkF1dGhvcml6ZXJJbmZvEmMKEmF1dGhvcml6YXRpb25faW5mbxgEIAEoCzJHLndlY2hhdC5UaGlyZFBhcnR5UGxhdGZvcm0uR2V0QXV0aG9yaXplckluZm8uUmVzcG9uc2UuQXV0aG9yaXphdGlvbkluZm8a9QwKDkF1dGhvcml6ZXJJbmZvEhEKCW5pY2tfbmFtZRgBIAEoCRIQCghoZWFkX2ltZxgCIAEoCRJvChFzZXJ2aWNlX3R5cGVfaW5mbxgDIAEoCzJULndlY2hhdC5UaGlyZFBhcnR5UGxhdGZvcm0uR2V0QXV0aG9yaXplckluZm8uUmVzcG9uc2UuQXV0aG9yaXplckluZm8uU2VydmljZVR5cGVJbmZvEm0KEHZlcmlmeV90eXBlX2luZm8YBCABKAsyUy53ZWNoYXQuVGhpcmRQYXJ0eVBsYXRmb3JtLkdldEF1dGhvcml6ZXJJbmZvLlJlc3BvbnNlLkF1dGhvcml6ZXJJbmZvLlZlcmlmeVR5cGVJbmZvEhEKCXVzZXJfbmFtZRgFIAEoCRINCgVhbGlhcxgGIAEoCRISCgpxcmNvZGVfdXJsGAcgASgJEmgKDWJ1c2luZXNzX2luZm8YCCABKAsyUS53ZWNoYXQuVGhpcmRQYXJ0eVBsYXRmb3JtLkdldEF1dGhvcml6ZXJJbmZvLlJlc3BvbnNlLkF1dGhvcml6ZXJJbmZvLkJ1c2luZXNzSW5mbxILCgNpZGMYCSABKAUSFgoOcHJpbmNpcGFsX25hbWUYCiABKAkSEQoJc2lnbmF0dXJlGAsgASgJEncKD01pbmlQcm9ncmFtSW5mbxgMIAEoCzJZLndlY2hhdC5UaGlyZFBhcnR5UGxhdGZvcm0uR2V0QXV0aG9yaXplckluZm8uUmVzcG9uc2UuQXV0aG9yaXplckluZm8uTW9kZWxNaW5pUHJvZ3JhbUluZm9IAIgBARIVCg1yZWdpc3Rlcl90eXBlGA0gASgFEhYKDmFjY291bnRfc3RhdHVzGA4gASgFEmYKDGJhc2ljX2NvbmZpZxgPIAEoCzJQLndlY2hhdC5UaGlyZFBhcnR5UGxhdGZvcm0uR2V0QXV0aG9yaXplckluZm8uUmVzcG9uc2UuQXV0aG9yaXplckluZm8uQmFzaWNDb25maWcSaAoNY2hhbm5lbHNfaW5mbxgQIAEoCzJRLndlY2hhdC5UaGlyZFBhcnR5UGxhdGZvcm0uR2V0QXV0aG9yaXplckluZm8uUmVzcG9uc2UuQXV0aG9yaXplckluZm8uQ2hhbm5lbHNJbmZvGisKD1NlcnZpY2VUeXBlSW5mbxIKCgJpZBgBIAEoBRIMCgRuYW1lGAIgASgJGioKDlZlcmlmeVR5cGVJbmZvEgoKAmlkGAEgASgFEgwKBG5hbWUYAiABKAkabgoMQnVzaW5lc3NJbmZvEhAKCG9wZW5fcGF5GAEgASgFEhIKCm9wZW5fc2hha2UYAiABKAUSEQoJb3Blbl9zY2FuGAMgASgFEhEKCW9wZW5fY2FyZBgEIAEoBRISCgpvcGVuX3N0b3JlGAUgASgFGtUDChRNb2RlbE1pbmlQcm9ncmFtSW5mbxJyCgduZXR3b3JrGAEgASgLMmEud2VjaGF0LlRoaXJkUGFydHlQbGF0Zm9ybS5HZXRBdXRob3JpemVySW5mby5SZXNwb25zZS5BdXRob3JpemVySW5mby5Nb2RlbE1pbmlQcm9ncmFtSW5mby5OZXR3b3JrEncKCmNhdGVnb3JpZXMYAiADKAsyYy53ZWNoYXQuVGhpcmRQYXJ0eVBsYXRmb3JtLkdldEF1dGhvcml6ZXJJbmZvLlJlc3BvbnNlLkF1dGhvcml6ZXJJbmZvLk1vZGVsTWluaVByb2dyYW1JbmZvLkNhdGVyZ29yeRIUCgx2aXNpdF9zdGF0dXMYAyABKAUajQEKB05ldHdvcmsSFQoNUmVxdWVzdERvbWFpbhgBIAMoCRIXCg9Xc1JlcXVlc3REb21haW4YAiADKAkSFAoMVXBsb2FkRG9tYWluGAMgAygJEhYKDkRvd25sb2FkRG9tYWluGAQgAygJEhEKCVVEUERvbWFpbhgFIAMoCRIRCglUQ1BEb21haW4YBiADKAkaKgoJQ2F0ZXJnb3J5Eg0KBWZpcnN0GAEgASgJEg4KBnNlY29uZBgCIAEoCRpHCgtCYXNpY0NvbmZpZxIbChNpc19waG9uZV9jb25maWd1cmVkGAEgASgIEhsKE2lzX2VtYWlsX2NvbmZpZ3VyZWQYAiABKAgaDgoMQ2hhbm5lbHNJbmZvQhIKEF9NaW5pUHJvZ3JhbUluZm8ajAMKEUF1dGhvcml6YXRpb25JbmZvEhgKEGF1dGhvcml6ZXJfYXBwaWQYASABKAkSIAoYYXV0aG9yaXplcl9yZWZyZXNoX3Rva2VuGAIgASgJEmMKCWZ1bmNfaW5mbxgDIAMoCzJQLndlY2hhdC5UaGlyZFBhcnR5UGxhdGZvcm0uR2V0QXV0aG9yaXplckluZm8uUmVzcG9uc2UuQXV0aG9yaXphdGlvbkluZm8uRnVuY0luZm8a1QEKCEZ1bmNJbmZvEn4KEmZ1bmNzY29wZV9jYXRlZ29yeRgBIAEoCzJiLndlY2hhdC5UaGlyZFBhcnR5UGxhdGZvcm0uR2V0QXV0aG9yaXplckluZm8uUmVzcG9uc2UuQXV0aG9yaXphdGlvbkluZm8uRnVuY0luZm8uRnVuY3Njb3BlQ2F0ZWdvcnkaSQoRRnVuY3Njb3BlQ2F0ZWdvcnkSCgoCaWQYASABKAUSDAoEdHlwZRgCIAEoBRIMCgRuYW1lGAMgASgJEgwKBGRlc2MYBCABKAlCJ1olc3ZjLWxhaXdlaS9wcm90by9nZW4vZ28vd2VjaGF0O3dlY2hhdGIGcHJvdG8z", [file_tagger_tagger]);
 
 /**
  * @generated from message wechat.ThirdPartyPlatform
@@ -27,35 +27,22 @@ export const ThirdPartyPlatformSchema: GenMessage<ThirdPartyPlatform> = /*@__PUR
   messageDesc(file_wechat_third_party_platform, 0);
 
 /**
- * @generated from message wechat.ThirdPartyPlatform.Component
+ * @generated from message wechat.ThirdPartyPlatform.StartPushTicket
  */
-export type ThirdPartyPlatform_Component = Message<"wechat.ThirdPartyPlatform.Component"> & {
+export type ThirdPartyPlatform_StartPushTicket = Message<"wechat.ThirdPartyPlatform.StartPushTicket"> & {
 };
 
 /**
- * Describes the message wechat.ThirdPartyPlatform.Component.
- * Use `create(ThirdPartyPlatform_ComponentSchema)` to create a new message.
+ * Describes the message wechat.ThirdPartyPlatform.StartPushTicket.
+ * Use `create(ThirdPartyPlatform_StartPushTicketSchema)` to create a new message.
  */
-export const ThirdPartyPlatform_ComponentSchema: GenMessage<ThirdPartyPlatform_Component> = /*@__PURE__*/
+export const ThirdPartyPlatform_StartPushTicketSchema: GenMessage<ThirdPartyPlatform_StartPushTicket> = /*@__PURE__*/
   messageDesc(file_wechat_third_party_platform, 0, 0);
 
 /**
- * @generated from message wechat.ThirdPartyPlatform.Component.ApiComponentToken
+ * @generated from message wechat.ThirdPartyPlatform.StartPushTicket.Request
  */
-export type ThirdPartyPlatform_Component_ApiComponentToken = Message<"wechat.ThirdPartyPlatform.Component.ApiComponentToken"> & {
-};
-
-/**
- * Describes the message wechat.ThirdPartyPlatform.Component.ApiComponentToken.
- * Use `create(ThirdPartyPlatform_Component_ApiComponentTokenSchema)` to create a new message.
- */
-export const ThirdPartyPlatform_Component_ApiComponentTokenSchema: GenMessage<ThirdPartyPlatform_Component_ApiComponentToken> = /*@__PURE__*/
-  messageDesc(file_wechat_third_party_platform, 0, 0, 0);
-
-/**
- * @generated from message wechat.ThirdPartyPlatform.Component.ApiComponentToken.Request
- */
-export type ThirdPartyPlatform_Component_ApiComponentToken_Request = Message<"wechat.ThirdPartyPlatform.Component.ApiComponentToken.Request"> & {
+export type ThirdPartyPlatform_StartPushTicket_Request = Message<"wechat.ThirdPartyPlatform.StartPushTicket.Request"> & {
   /**
    * @generated from field: string component_appid = 1;
    */
@@ -65,59 +52,58 @@ export type ThirdPartyPlatform_Component_ApiComponentToken_Request = Message<"we
    * @generated from field: string component_appsecret = 2;
    */
   componentAppsecret: string;
-
-  /**
-   * @generated from field: string component_verify_ticket = 3;
-   */
-  componentVerifyTicket: string;
 };
 
 /**
- * Describes the message wechat.ThirdPartyPlatform.Component.ApiComponentToken.Request.
- * Use `create(ThirdPartyPlatform_Component_ApiComponentToken_RequestSchema)` to create a new message.
+ * Describes the message wechat.ThirdPartyPlatform.StartPushTicket.Request.
+ * Use `create(ThirdPartyPlatform_StartPushTicket_RequestSchema)` to create a new message.
  */
-export const ThirdPartyPlatform_Component_ApiComponentToken_RequestSchema: GenMessage<ThirdPartyPlatform_Component_ApiComponentToken_Request> = /*@__PURE__*/
-  messageDesc(file_wechat_third_party_platform, 0, 0, 0, 0);
+export const ThirdPartyPlatform_StartPushTicket_RequestSchema: GenMessage<ThirdPartyPlatform_StartPushTicket_Request> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 0, 0);
 
 /**
- * @generated from message wechat.ThirdPartyPlatform.Component.ApiComponentToken.Response
+ * @generated from message wechat.ThirdPartyPlatform.StartPushTicket.Response
  */
-export type ThirdPartyPlatform_Component_ApiComponentToken_Response = Message<"wechat.ThirdPartyPlatform.Component.ApiComponentToken.Response"> & {
+export type ThirdPartyPlatform_StartPushTicket_Response = Message<"wechat.ThirdPartyPlatform.StartPushTicket.Response"> & {
   /**
-   * @generated from field: string component_access_token = 1;
+   * 错误码
+   *
+   * @generated from field: int32 errcode = 1;
    */
-  componentAccessToken: string;
+  errcode: number;
 
   /**
-   * @generated from field: int32 expires_in = 2;
+   * 错误信息
+   *
+   * @generated from field: string errmsg = 2;
    */
-  expiresIn: number;
+  errmsg: string;
 };
 
 /**
- * Describes the message wechat.ThirdPartyPlatform.Component.ApiComponentToken.Response.
- * Use `create(ThirdPartyPlatform_Component_ApiComponentToken_ResponseSchema)` to create a new message.
+ * Describes the message wechat.ThirdPartyPlatform.StartPushTicket.Response.
+ * Use `create(ThirdPartyPlatform_StartPushTicket_ResponseSchema)` to create a new message.
  */
-export const ThirdPartyPlatform_Component_ApiComponentToken_ResponseSchema: GenMessage<ThirdPartyPlatform_Component_ApiComponentToken_Response> = /*@__PURE__*/
-  messageDesc(file_wechat_third_party_platform, 0, 0, 0, 1);
-
-/**
- * @generated from message wechat.ThirdPartyPlatform.Component.ApiCreatePreauthcode
- */
-export type ThirdPartyPlatform_Component_ApiCreatePreauthcode = Message<"wechat.ThirdPartyPlatform.Component.ApiCreatePreauthcode"> & {
-};
-
-/**
- * Describes the message wechat.ThirdPartyPlatform.Component.ApiCreatePreauthcode.
- * Use `create(ThirdPartyPlatform_Component_ApiCreatePreauthcodeSchema)` to create a new message.
- */
-export const ThirdPartyPlatform_Component_ApiCreatePreauthcodeSchema: GenMessage<ThirdPartyPlatform_Component_ApiCreatePreauthcode> = /*@__PURE__*/
+export const ThirdPartyPlatform_StartPushTicket_ResponseSchema: GenMessage<ThirdPartyPlatform_StartPushTicket_Response> = /*@__PURE__*/
   messageDesc(file_wechat_third_party_platform, 0, 0, 1);
 
 /**
- * @generated from message wechat.ThirdPartyPlatform.Component.ApiCreatePreauthcode.Request
+ * @generated from message wechat.ThirdPartyPlatform.GetPreAuthCode
  */
-export type ThirdPartyPlatform_Component_ApiCreatePreauthcode_Request = Message<"wechat.ThirdPartyPlatform.Component.ApiCreatePreauthcode.Request"> & {
+export type ThirdPartyPlatform_GetPreAuthCode = Message<"wechat.ThirdPartyPlatform.GetPreAuthCode"> & {
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetPreAuthCode.
+ * Use `create(ThirdPartyPlatform_GetPreAuthCodeSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetPreAuthCodeSchema: GenMessage<ThirdPartyPlatform_GetPreAuthCode> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 1);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetPreAuthCode.Request
+ */
+export type ThirdPartyPlatform_GetPreAuthCode_Request = Message<"wechat.ThirdPartyPlatform.GetPreAuthCode.Request"> & {
   /**
    * @generated from field: string component_access_token = 1;
    */
@@ -130,51 +116,151 @@ export type ThirdPartyPlatform_Component_ApiCreatePreauthcode_Request = Message<
 };
 
 /**
- * Describes the message wechat.ThirdPartyPlatform.Component.ApiCreatePreauthcode.Request.
- * Use `create(ThirdPartyPlatform_Component_ApiCreatePreauthcode_RequestSchema)` to create a new message.
+ * Describes the message wechat.ThirdPartyPlatform.GetPreAuthCode.Request.
+ * Use `create(ThirdPartyPlatform_GetPreAuthCode_RequestSchema)` to create a new message.
  */
-export const ThirdPartyPlatform_Component_ApiCreatePreauthcode_RequestSchema: GenMessage<ThirdPartyPlatform_Component_ApiCreatePreauthcode_Request> = /*@__PURE__*/
-  messageDesc(file_wechat_third_party_platform, 0, 0, 1, 0);
+export const ThirdPartyPlatform_GetPreAuthCode_RequestSchema: GenMessage<ThirdPartyPlatform_GetPreAuthCode_Request> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 1, 0);
 
 /**
- * @generated from message wechat.ThirdPartyPlatform.Component.ApiCreatePreauthcode.Response
+ * @generated from message wechat.ThirdPartyPlatform.GetPreAuthCode.Response
  */
-export type ThirdPartyPlatform_Component_ApiCreatePreauthcode_Response = Message<"wechat.ThirdPartyPlatform.Component.ApiCreatePreauthcode.Response"> & {
+export type ThirdPartyPlatform_GetPreAuthCode_Response = Message<"wechat.ThirdPartyPlatform.GetPreAuthCode.Response"> & {
   /**
-   * @generated from field: string pre_auth_code = 1;
+   * 错误码
+   *
+   * @generated from field: int32 errcode = 1;
+   */
+  errcode: number;
+
+  /**
+   * 错误信息
+   *
+   * @generated from field: string errmsg = 2;
+   */
+  errmsg: string;
+
+  /**
+   * @generated from field: string pre_auth_code = 3;
    */
   preAuthCode: string;
 
   /**
-   * @generated from field: int32 expires_in = 2;
+   * @generated from field: int32 expires_in = 4;
    */
   expiresIn: number;
 };
 
 /**
- * Describes the message wechat.ThirdPartyPlatform.Component.ApiCreatePreauthcode.Response.
- * Use `create(ThirdPartyPlatform_Component_ApiCreatePreauthcode_ResponseSchema)` to create a new message.
+ * Describes the message wechat.ThirdPartyPlatform.GetPreAuthCode.Response.
+ * Use `create(ThirdPartyPlatform_GetPreAuthCode_ResponseSchema)` to create a new message.
  */
-export const ThirdPartyPlatform_Component_ApiCreatePreauthcode_ResponseSchema: GenMessage<ThirdPartyPlatform_Component_ApiCreatePreauthcode_Response> = /*@__PURE__*/
-  messageDesc(file_wechat_third_party_platform, 0, 0, 1, 1);
+export const ThirdPartyPlatform_GetPreAuthCode_ResponseSchema: GenMessage<ThirdPartyPlatform_GetPreAuthCode_Response> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 1, 1);
 
 /**
- * @generated from message wechat.ThirdPartyPlatform.Component.ApiQueryAuth
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerAccessToken
  */
-export type ThirdPartyPlatform_Component_ApiQueryAuth = Message<"wechat.ThirdPartyPlatform.Component.ApiQueryAuth"> & {
+export type ThirdPartyPlatform_GetAuthorizerAccessToken = Message<"wechat.ThirdPartyPlatform.GetAuthorizerAccessToken"> & {
 };
 
 /**
- * Describes the message wechat.ThirdPartyPlatform.Component.ApiQueryAuth.
- * Use `create(ThirdPartyPlatform_Component_ApiQueryAuthSchema)` to create a new message.
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerAccessToken.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerAccessTokenSchema)` to create a new message.
  */
-export const ThirdPartyPlatform_Component_ApiQueryAuthSchema: GenMessage<ThirdPartyPlatform_Component_ApiQueryAuth> = /*@__PURE__*/
-  messageDesc(file_wechat_third_party_platform, 0, 0, 2);
+export const ThirdPartyPlatform_GetAuthorizerAccessTokenSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerAccessToken> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 2);
 
 /**
- * @generated from message wechat.ThirdPartyPlatform.Component.ApiQueryAuth.Request
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerAccessToken.Request
  */
-export type ThirdPartyPlatform_Component_ApiQueryAuth_Request = Message<"wechat.ThirdPartyPlatform.Component.ApiQueryAuth.Request"> & {
+export type ThirdPartyPlatform_GetAuthorizerAccessToken_Request = Message<"wechat.ThirdPartyPlatform.GetAuthorizerAccessToken.Request"> & {
+  /**
+   * @generated from field: string component_access_token = 1;
+   */
+  componentAccessToken: string;
+
+  /**
+   * @generated from field: string component_appid = 2;
+   */
+  componentAppid: string;
+
+  /**
+   * @generated from field: string authorizer_appid = 3;
+   */
+  authorizerAppid: string;
+
+  /**
+   * @generated from field: string authorizer_refresh_token = 4;
+   */
+  authorizerRefreshToken: string;
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerAccessToken.Request.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerAccessToken_RequestSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetAuthorizerAccessToken_RequestSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerAccessToken_Request> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 2, 0);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerAccessToken.Response
+ */
+export type ThirdPartyPlatform_GetAuthorizerAccessToken_Response = Message<"wechat.ThirdPartyPlatform.GetAuthorizerAccessToken.Response"> & {
+  /**
+   * 错误码
+   *
+   * @generated from field: int32 errcode = 1;
+   */
+  errcode: number;
+
+  /**
+   * 错误信息
+   *
+   * @generated from field: string errmsg = 2;
+   */
+  errmsg: string;
+
+  /**
+   * @generated from field: string authorizer_access_token = 4;
+   */
+  authorizerAccessToken: string;
+
+  /**
+   * @generated from field: int32 expires_in = 5;
+   */
+  expiresIn: number;
+
+  /**
+   * @generated from field: string authorizer_refresh_token = 6;
+   */
+  authorizerRefreshToken: string;
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerAccessToken.Response.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerAccessToken_ResponseSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetAuthorizerAccessToken_ResponseSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerAccessToken_Response> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 2, 1);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken
+ */
+export type ThirdPartyPlatform_GetAuthorizerRefreshToken = Message<"wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken"> & {
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerRefreshTokenSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetAuthorizerRefreshTokenSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerRefreshToken> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 3);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken.Request
+ */
+export type ThirdPartyPlatform_GetAuthorizerRefreshToken_Request = Message<"wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken.Request"> & {
   /**
    * @generated from field: string component_access_token = 1;
    */
@@ -192,42 +278,56 @@ export type ThirdPartyPlatform_Component_ApiQueryAuth_Request = Message<"wechat.
 };
 
 /**
- * Describes the message wechat.ThirdPartyPlatform.Component.ApiQueryAuth.Request.
- * Use `create(ThirdPartyPlatform_Component_ApiQueryAuth_RequestSchema)` to create a new message.
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken.Request.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerRefreshToken_RequestSchema)` to create a new message.
  */
-export const ThirdPartyPlatform_Component_ApiQueryAuth_RequestSchema: GenMessage<ThirdPartyPlatform_Component_ApiQueryAuth_Request> = /*@__PURE__*/
-  messageDesc(file_wechat_third_party_platform, 0, 0, 2, 0);
+export const ThirdPartyPlatform_GetAuthorizerRefreshToken_RequestSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerRefreshToken_Request> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 3, 0);
 
 /**
- * @generated from message wechat.ThirdPartyPlatform.Component.ApiQueryAuth.Response
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken.Response
  */
-export type ThirdPartyPlatform_Component_ApiQueryAuth_Response = Message<"wechat.ThirdPartyPlatform.Component.ApiQueryAuth.Response"> & {
+export type ThirdPartyPlatform_GetAuthorizerRefreshToken_Response = Message<"wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken.Response"> & {
   /**
-   * @generated from field: wechat.ThirdPartyPlatform.Component.ApiQueryAuth.Response.AuthorizationInfo authorization_info = 1;
+   * 错误码
+   *
+   * @generated from field: int32 errcode = 1;
    */
-  authorizationInfo?: ThirdPartyPlatform_Component_ApiQueryAuth_Response_AuthorizationInfo;
+  errcode: number;
+
+  /**
+   * 错误信息
+   *
+   * @generated from field: string errmsg = 2;
+   */
+  errmsg: string;
+
+  /**
+   * @generated from field: wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken.Response.AuthorizationInfo authorization_info = 3;
+   */
+  authorizationInfo?: ThirdPartyPlatform_GetAuthorizerRefreshToken_Response_AuthorizationInfo;
 };
 
 /**
- * Describes the message wechat.ThirdPartyPlatform.Component.ApiQueryAuth.Response.
- * Use `create(ThirdPartyPlatform_Component_ApiQueryAuth_ResponseSchema)` to create a new message.
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken.Response.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerRefreshToken_ResponseSchema)` to create a new message.
  */
-export const ThirdPartyPlatform_Component_ApiQueryAuth_ResponseSchema: GenMessage<ThirdPartyPlatform_Component_ApiQueryAuth_Response> = /*@__PURE__*/
-  messageDesc(file_wechat_third_party_platform, 0, 0, 2, 1);
+export const ThirdPartyPlatform_GetAuthorizerRefreshToken_ResponseSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerRefreshToken_Response> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 3, 1);
 
 /**
- * @generated from message wechat.ThirdPartyPlatform.Component.ApiQueryAuth.Response.AuthorizationInfo
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken.Response.AuthorizationInfo
  */
-export type ThirdPartyPlatform_Component_ApiQueryAuth_Response_AuthorizationInfo = Message<"wechat.ThirdPartyPlatform.Component.ApiQueryAuth.Response.AuthorizationInfo"> & {
+export type ThirdPartyPlatform_GetAuthorizerRefreshToken_Response_AuthorizationInfo = Message<"wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken.Response.AuthorizationInfo"> & {
   /**
    * @generated from field: string authorizer_appid = 1;
    */
   authorizerAppid: string;
 
   /**
-   * @generated from field: string authorizer_access_token = 2;
+   * @generated from field: optional string authorizer_access_token = 2;
    */
-  authorizerAccessToken: string;
+  authorizerAccessToken?: string;
 
   /**
    * @generated from field: optional int32 expires_in = 3;
@@ -240,49 +340,694 @@ export type ThirdPartyPlatform_Component_ApiQueryAuth_Response_AuthorizationInfo
   authorizerRefreshToken?: string;
 
   /**
-   * @generated from field: repeated wechat.ThirdPartyPlatform.Component.ApiQueryAuth.Response.AuthorizationInfo.FuncInfo func_info = 5;
+   * @generated from field: repeated wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken.Response.AuthorizationInfo.FuncInfo func_info = 5;
    */
-  funcInfo: ThirdPartyPlatform_Component_ApiQueryAuth_Response_AuthorizationInfo_FuncInfo[];
+  funcInfo: ThirdPartyPlatform_GetAuthorizerRefreshToken_Response_AuthorizationInfo_FuncInfo[];
 };
 
 /**
- * Describes the message wechat.ThirdPartyPlatform.Component.ApiQueryAuth.Response.AuthorizationInfo.
- * Use `create(ThirdPartyPlatform_Component_ApiQueryAuth_Response_AuthorizationInfoSchema)` to create a new message.
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken.Response.AuthorizationInfo.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerRefreshToken_Response_AuthorizationInfoSchema)` to create a new message.
  */
-export const ThirdPartyPlatform_Component_ApiQueryAuth_Response_AuthorizationInfoSchema: GenMessage<ThirdPartyPlatform_Component_ApiQueryAuth_Response_AuthorizationInfo> = /*@__PURE__*/
-  messageDesc(file_wechat_third_party_platform, 0, 0, 2, 1, 0);
+export const ThirdPartyPlatform_GetAuthorizerRefreshToken_Response_AuthorizationInfoSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerRefreshToken_Response_AuthorizationInfo> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 3, 1, 0);
 
 /**
- * @generated from message wechat.ThirdPartyPlatform.Component.ApiQueryAuth.Response.AuthorizationInfo.FuncInfo
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken.Response.AuthorizationInfo.FuncInfo
  */
-export type ThirdPartyPlatform_Component_ApiQueryAuth_Response_AuthorizationInfo_FuncInfo = Message<"wechat.ThirdPartyPlatform.Component.ApiQueryAuth.Response.AuthorizationInfo.FuncInfo"> & {
+export type ThirdPartyPlatform_GetAuthorizerRefreshToken_Response_AuthorizationInfo_FuncInfo = Message<"wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken.Response.AuthorizationInfo.FuncInfo"> & {
   /**
-   * @generated from field: map<string, wechat.ThirdPartyPlatform.Component.ApiQueryAuth.Response.AuthorizationInfo.FuncInfo.Scope> funcscope_category = 1;
+   * @generated from field: wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken.Response.AuthorizationInfo.FuncInfo.FuncscopeCategory funcscope_category = 1;
    */
-  funcscopeCategory: { [key: string]: ThirdPartyPlatform_Component_ApiQueryAuth_Response_AuthorizationInfo_FuncInfo_Scope };
+  funcscopeCategory?: ThirdPartyPlatform_GetAuthorizerRefreshToken_Response_AuthorizationInfo_FuncInfo_FuncscopeCategory;
 };
 
 /**
- * Describes the message wechat.ThirdPartyPlatform.Component.ApiQueryAuth.Response.AuthorizationInfo.FuncInfo.
- * Use `create(ThirdPartyPlatform_Component_ApiQueryAuth_Response_AuthorizationInfo_FuncInfoSchema)` to create a new message.
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken.Response.AuthorizationInfo.FuncInfo.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerRefreshToken_Response_AuthorizationInfo_FuncInfoSchema)` to create a new message.
  */
-export const ThirdPartyPlatform_Component_ApiQueryAuth_Response_AuthorizationInfo_FuncInfoSchema: GenMessage<ThirdPartyPlatform_Component_ApiQueryAuth_Response_AuthorizationInfo_FuncInfo> = /*@__PURE__*/
-  messageDesc(file_wechat_third_party_platform, 0, 0, 2, 1, 0, 0);
+export const ThirdPartyPlatform_GetAuthorizerRefreshToken_Response_AuthorizationInfo_FuncInfoSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerRefreshToken_Response_AuthorizationInfo_FuncInfo> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 3, 1, 0, 0);
 
 /**
- * @generated from message wechat.ThirdPartyPlatform.Component.ApiQueryAuth.Response.AuthorizationInfo.FuncInfo.Scope
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken.Response.AuthorizationInfo.FuncInfo.FuncscopeCategory
  */
-export type ThirdPartyPlatform_Component_ApiQueryAuth_Response_AuthorizationInfo_FuncInfo_Scope = Message<"wechat.ThirdPartyPlatform.Component.ApiQueryAuth.Response.AuthorizationInfo.FuncInfo.Scope"> & {
+export type ThirdPartyPlatform_GetAuthorizerRefreshToken_Response_AuthorizationInfo_FuncInfo_FuncscopeCategory = Message<"wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken.Response.AuthorizationInfo.FuncInfo.FuncscopeCategory"> & {
   /**
    * @generated from field: int32 id = 1;
    */
   id: number;
+
+  /**
+   * @generated from field: int32 type = 2;
+   */
+  type: number;
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string desc = 4;
+   */
+  desc: string;
 };
 
 /**
- * Describes the message wechat.ThirdPartyPlatform.Component.ApiQueryAuth.Response.AuthorizationInfo.FuncInfo.Scope.
- * Use `create(ThirdPartyPlatform_Component_ApiQueryAuth_Response_AuthorizationInfo_FuncInfo_ScopeSchema)` to create a new message.
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerRefreshToken.Response.AuthorizationInfo.FuncInfo.FuncscopeCategory.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerRefreshToken_Response_AuthorizationInfo_FuncInfo_FuncscopeCategorySchema)` to create a new message.
  */
-export const ThirdPartyPlatform_Component_ApiQueryAuth_Response_AuthorizationInfo_FuncInfo_ScopeSchema: GenMessage<ThirdPartyPlatform_Component_ApiQueryAuth_Response_AuthorizationInfo_FuncInfo_Scope> = /*@__PURE__*/
-  messageDesc(file_wechat_third_party_platform, 0, 0, 2, 1, 0, 0, 0);
+export const ThirdPartyPlatform_GetAuthorizerRefreshToken_Response_AuthorizationInfo_FuncInfo_FuncscopeCategorySchema: GenMessage<ThirdPartyPlatform_GetAuthorizerRefreshToken_Response_AuthorizationInfo_FuncInfo_FuncscopeCategory> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 3, 1, 0, 0, 0);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetComponentAccessToken
+ */
+export type ThirdPartyPlatform_GetComponentAccessToken = Message<"wechat.ThirdPartyPlatform.GetComponentAccessToken"> & {
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetComponentAccessToken.
+ * Use `create(ThirdPartyPlatform_GetComponentAccessTokenSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetComponentAccessTokenSchema: GenMessage<ThirdPartyPlatform_GetComponentAccessToken> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 4);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetComponentAccessToken.Request
+ */
+export type ThirdPartyPlatform_GetComponentAccessToken_Request = Message<"wechat.ThirdPartyPlatform.GetComponentAccessToken.Request"> & {
+  /**
+   * @generated from field: string component_appid = 1;
+   */
+  componentAppid: string;
+
+  /**
+   * @generated from field: string component_appsecret = 2;
+   */
+  componentAppsecret: string;
+
+  /**
+   * @generated from field: string component_verify_ticket = 3;
+   */
+  componentVerifyTicket: string;
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetComponentAccessToken.Request.
+ * Use `create(ThirdPartyPlatform_GetComponentAccessToken_RequestSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetComponentAccessToken_RequestSchema: GenMessage<ThirdPartyPlatform_GetComponentAccessToken_Request> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 4, 0);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetComponentAccessToken.Response
+ */
+export type ThirdPartyPlatform_GetComponentAccessToken_Response = Message<"wechat.ThirdPartyPlatform.GetComponentAccessToken.Response"> & {
+  /**
+   * 错误码
+   *
+   * @generated from field: int32 errcode = 1;
+   */
+  errcode: number;
+
+  /**
+   * 错误信息
+   *
+   * @generated from field: string errmsg = 2;
+   */
+  errmsg: string;
+
+  /**
+   * @generated from field: string component_access_token = 3;
+   */
+  componentAccessToken: string;
+
+  /**
+   * @generated from field: int32 expires_in = 4;
+   */
+  expiresIn: number;
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetComponentAccessToken.Response.
+ * Use `create(ThirdPartyPlatform_GetComponentAccessToken_ResponseSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetComponentAccessToken_ResponseSchema: GenMessage<ThirdPartyPlatform_GetComponentAccessToken_Response> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 4, 1);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.ThirdpartyCode2Session
+ */
+export type ThirdPartyPlatform_ThirdpartyCode2Session = Message<"wechat.ThirdPartyPlatform.ThirdpartyCode2Session"> & {
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.ThirdpartyCode2Session.
+ * Use `create(ThirdPartyPlatform_ThirdpartyCode2SessionSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_ThirdpartyCode2SessionSchema: GenMessage<ThirdPartyPlatform_ThirdpartyCode2Session> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 5);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.ThirdpartyCode2Session.Request
+ */
+export type ThirdPartyPlatform_ThirdpartyCode2Session_Request = Message<"wechat.ThirdPartyPlatform.ThirdpartyCode2Session.Request"> & {
+  /**
+   * @generated from field: string component_access_token = 1;
+   */
+  componentAccessToken: string;
+
+  /**
+   * @generated from field: string component_appid = 2;
+   */
+  componentAppid: string;
+
+  /**
+   * 小程序 appid
+   *
+   * @generated from field: string appid = 3;
+   */
+  appid: string;
+
+  /**
+   * 登录时获取的 code，可通过wx.login获取
+   *
+   * @generated from field: string js_code = 4;
+   */
+  jsCode: string;
+
+  /**
+   * 授权类型，此处只需填写 authorization_code
+   *
+   * @generated from field: string grant_type = 5;
+   */
+  grantType: string;
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.ThirdpartyCode2Session.Request.
+ * Use `create(ThirdPartyPlatform_ThirdpartyCode2Session_RequestSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_ThirdpartyCode2Session_RequestSchema: GenMessage<ThirdPartyPlatform_ThirdpartyCode2Session_Request> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 5, 0);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.ThirdpartyCode2Session.Response
+ */
+export type ThirdPartyPlatform_ThirdpartyCode2Session_Response = Message<"wechat.ThirdPartyPlatform.ThirdpartyCode2Session.Response"> & {
+  /**
+   * 错误码
+   *
+   * @generated from field: int32 errcode = 1;
+   */
+  errcode: number;
+
+  /**
+   * 错误信息
+   *
+   * @generated from field: string errmsg = 2;
+   */
+  errmsg: string;
+
+  /**
+   * 会话密钥
+   *
+   * @generated from field: string session_key = 3;
+   */
+  sessionKey: string;
+
+  /**
+   * 用户唯一标识
+   *
+   * @generated from field: string openid = 4;
+   */
+  openid: string;
+
+  /**
+   * 用户在开放平台的唯一标识符
+   *
+   * @generated from field: optional string unionid = 5;
+   */
+  unionid?: string;
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.ThirdpartyCode2Session.Response.
+ * Use `create(ThirdPartyPlatform_ThirdpartyCode2Session_ResponseSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_ThirdpartyCode2Session_ResponseSchema: GenMessage<ThirdPartyPlatform_ThirdpartyCode2Session_Response> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 5, 1);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerInfo
+ */
+export type ThirdPartyPlatform_GetAuthorizerInfo = Message<"wechat.ThirdPartyPlatform.GetAuthorizerInfo"> & {
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerInfo.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerInfoSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetAuthorizerInfoSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerInfo> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 6);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Request
+ */
+export type ThirdPartyPlatform_GetAuthorizerInfo_Request = Message<"wechat.ThirdPartyPlatform.GetAuthorizerInfo.Request"> & {
+  /**
+   * @generated from field: string access_token = 1;
+   */
+  accessToken: string;
+
+  /**
+   * @generated from field: string component_appid = 2;
+   */
+  componentAppid: string;
+
+  /**
+   * @generated from field: string authorizer_appid = 3;
+   */
+  authorizerAppid: string;
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Request.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerInfo_RequestSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetAuthorizerInfo_RequestSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerInfo_Request> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 6, 0);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response
+ */
+export type ThirdPartyPlatform_GetAuthorizerInfo_Response = Message<"wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response"> & {
+  /**
+   * 错误码
+   *
+   * @generated from field: int32 errcode = 1;
+   */
+  errcode: number;
+
+  /**
+   * 错误信息
+   *
+   * @generated from field: string errmsg = 2;
+   */
+  errmsg: string;
+
+  /**
+   * @generated from field: wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo authorizer_info = 3;
+   */
+  authorizerInfo?: ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo;
+
+  /**
+   * @generated from field: wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizationInfo authorization_info = 4;
+   */
+  authorizationInfo?: ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizationInfo;
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerInfo_ResponseSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetAuthorizerInfo_ResponseSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerInfo_Response> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 6, 1);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo
+ */
+export type ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo = Message<"wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo"> & {
+  /**
+   * @generated from field: string nick_name = 1;
+   */
+  nickName: string;
+
+  /**
+   * @generated from field: string head_img = 2;
+   */
+  headImg: string;
+
+  /**
+   * @generated from field: wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ServiceTypeInfo service_type_info = 3;
+   */
+  serviceTypeInfo?: ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ServiceTypeInfo;
+
+  /**
+   * @generated from field: wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.VerifyTypeInfo verify_type_info = 4;
+   */
+  verifyTypeInfo?: ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_VerifyTypeInfo;
+
+  /**
+   * @generated from field: string user_name = 5;
+   */
+  userName: string;
+
+  /**
+   * @generated from field: string alias = 6;
+   */
+  alias: string;
+
+  /**
+   * @generated from field: string qrcode_url = 7;
+   */
+  qrcodeUrl: string;
+
+  /**
+   * @generated from field: wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.BusinessInfo business_info = 8;
+   */
+  businessInfo?: ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_BusinessInfo;
+
+  /**
+   * @generated from field: int32 idc = 9;
+   */
+  idc: number;
+
+  /**
+   * @generated from field: string principal_name = 10;
+   */
+  principalName: string;
+
+  /**
+   * @generated from field: string signature = 11;
+   */
+  signature: string;
+
+  /**
+   * @generated from field: optional wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ModelMiniProgramInfo MiniProgramInfo = 12;
+   */
+  MiniProgramInfo?: ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ModelMiniProgramInfo;
+
+  /**
+   * @generated from field: int32 register_type = 13;
+   */
+  registerType: number;
+
+  /**
+   * @generated from field: int32 account_status = 14;
+   */
+  accountStatus: number;
+
+  /**
+   * @generated from field: wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.BasicConfig basic_config = 15;
+   */
+  basicConfig?: ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_BasicConfig;
+
+  /**
+   * @generated from field: wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ChannelsInfo channels_info = 16;
+   */
+  channelsInfo?: ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ChannelsInfo;
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfoSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfoSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 6, 1, 0);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ServiceTypeInfo
+ */
+export type ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ServiceTypeInfo = Message<"wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ServiceTypeInfo"> & {
+  /**
+   * @generated from field: int32 id = 1;
+   */
+  id: number;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ServiceTypeInfo.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ServiceTypeInfoSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ServiceTypeInfoSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ServiceTypeInfo> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 6, 1, 0, 0);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.VerifyTypeInfo
+ */
+export type ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_VerifyTypeInfo = Message<"wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.VerifyTypeInfo"> & {
+  /**
+   * @generated from field: int32 id = 1;
+   */
+  id: number;
+
+  /**
+   * @generated from field: string name = 2;
+   */
+  name: string;
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.VerifyTypeInfo.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_VerifyTypeInfoSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_VerifyTypeInfoSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_VerifyTypeInfo> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 6, 1, 0, 1);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.BusinessInfo
+ */
+export type ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_BusinessInfo = Message<"wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.BusinessInfo"> & {
+  /**
+   * @generated from field: int32 open_pay = 1;
+   */
+  openPay: number;
+
+  /**
+   * @generated from field: int32 open_shake = 2;
+   */
+  openShake: number;
+
+  /**
+   * @generated from field: int32 open_scan = 3;
+   */
+  openScan: number;
+
+  /**
+   * @generated from field: int32 open_card = 4;
+   */
+  openCard: number;
+
+  /**
+   * @generated from field: int32 open_store = 5;
+   */
+  openStore: number;
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.BusinessInfo.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_BusinessInfoSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_BusinessInfoSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_BusinessInfo> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 6, 1, 0, 2);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ModelMiniProgramInfo
+ */
+export type ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ModelMiniProgramInfo = Message<"wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ModelMiniProgramInfo"> & {
+  /**
+   * @generated from field: wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ModelMiniProgramInfo.Network network = 1;
+   */
+  network?: ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ModelMiniProgramInfo_Network;
+
+  /**
+   * @generated from field: repeated wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ModelMiniProgramInfo.Catergory categories = 2;
+   */
+  categories: ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ModelMiniProgramInfo_Catergory[];
+
+  /**
+   * @generated from field: int32 visit_status = 3;
+   */
+  visitStatus: number;
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ModelMiniProgramInfo.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ModelMiniProgramInfoSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ModelMiniProgramInfoSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ModelMiniProgramInfo> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 6, 1, 0, 3);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ModelMiniProgramInfo.Network
+ */
+export type ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ModelMiniProgramInfo_Network = Message<"wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ModelMiniProgramInfo.Network"> & {
+  /**
+   * @generated from field: repeated string RequestDomain = 1;
+   */
+  RequestDomain: string[];
+
+  /**
+   * @generated from field: repeated string WsRequestDomain = 2;
+   */
+  WsRequestDomain: string[];
+
+  /**
+   * @generated from field: repeated string UploadDomain = 3;
+   */
+  UploadDomain: string[];
+
+  /**
+   * @generated from field: repeated string DownloadDomain = 4;
+   */
+  DownloadDomain: string[];
+
+  /**
+   * @generated from field: repeated string UDPDomain = 5;
+   */
+  UDPDomain: string[];
+
+  /**
+   * @generated from field: repeated string TCPDomain = 6;
+   */
+  TCPDomain: string[];
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ModelMiniProgramInfo.Network.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ModelMiniProgramInfo_NetworkSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ModelMiniProgramInfo_NetworkSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ModelMiniProgramInfo_Network> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 6, 1, 0, 3, 0);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ModelMiniProgramInfo.Catergory
+ */
+export type ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ModelMiniProgramInfo_Catergory = Message<"wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ModelMiniProgramInfo.Catergory"> & {
+  /**
+   * @generated from field: string first = 1;
+   */
+  first: string;
+
+  /**
+   * @generated from field: string second = 2;
+   */
+  second: string;
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ModelMiniProgramInfo.Catergory.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ModelMiniProgramInfo_CatergorySchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ModelMiniProgramInfo_CatergorySchema: GenMessage<ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ModelMiniProgramInfo_Catergory> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 6, 1, 0, 3, 1);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.BasicConfig
+ */
+export type ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_BasicConfig = Message<"wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.BasicConfig"> & {
+  /**
+   * @generated from field: bool is_phone_configured = 1;
+   */
+  isPhoneConfigured: boolean;
+
+  /**
+   * @generated from field: bool is_email_configured = 2;
+   */
+  isEmailConfigured: boolean;
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.BasicConfig.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_BasicConfigSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_BasicConfigSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_BasicConfig> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 6, 1, 0, 4);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ChannelsInfo
+ */
+export type ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ChannelsInfo = Message<"wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ChannelsInfo"> & {
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizerInfo.ChannelsInfo.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ChannelsInfoSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ChannelsInfoSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizerInfo_ChannelsInfo> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 6, 1, 0, 5);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizationInfo
+ */
+export type ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizationInfo = Message<"wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizationInfo"> & {
+  /**
+   * @generated from field: string authorizer_appid = 1;
+   */
+  authorizerAppid: string;
+
+  /**
+   * @generated from field: string authorizer_refresh_token = 2;
+   */
+  authorizerRefreshToken: string;
+
+  /**
+   * @generated from field: repeated wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizationInfo.FuncInfo func_info = 3;
+   */
+  funcInfo: ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizationInfo_FuncInfo[];
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizationInfo.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizationInfoSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizationInfoSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizationInfo> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 6, 1, 1);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizationInfo.FuncInfo
+ */
+export type ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizationInfo_FuncInfo = Message<"wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizationInfo.FuncInfo"> & {
+  /**
+   * @generated from field: wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizationInfo.FuncInfo.FuncscopeCategory funcscope_category = 1;
+   */
+  funcscopeCategory?: ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizationInfo_FuncInfo_FuncscopeCategory;
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizationInfo.FuncInfo.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizationInfo_FuncInfoSchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizationInfo_FuncInfoSchema: GenMessage<ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizationInfo_FuncInfo> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 6, 1, 1, 0);
+
+/**
+ * @generated from message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizationInfo.FuncInfo.FuncscopeCategory
+ */
+export type ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizationInfo_FuncInfo_FuncscopeCategory = Message<"wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizationInfo.FuncInfo.FuncscopeCategory"> & {
+  /**
+   * @generated from field: int32 id = 1;
+   */
+  id: number;
+
+  /**
+   * @generated from field: int32 type = 2;
+   */
+  type: number;
+
+  /**
+   * @generated from field: string name = 3;
+   */
+  name: string;
+
+  /**
+   * @generated from field: string desc = 4;
+   */
+  desc: string;
+};
+
+/**
+ * Describes the message wechat.ThirdPartyPlatform.GetAuthorizerInfo.Response.AuthorizationInfo.FuncInfo.FuncscopeCategory.
+ * Use `create(ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizationInfo_FuncInfo_FuncscopeCategorySchema)` to create a new message.
+ */
+export const ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizationInfo_FuncInfo_FuncscopeCategorySchema: GenMessage<ThirdPartyPlatform_GetAuthorizerInfo_Response_AuthorizationInfo_FuncInfo_FuncscopeCategory> = /*@__PURE__*/
+  messageDesc(file_wechat_third_party_platform, 0, 6, 1, 1, 0, 0);
 
