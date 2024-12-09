@@ -12,6 +12,7 @@ import { useUserLoginInfo } from "@/lib/hooks/user-login-info";
 import { UserInfo } from "./component/user-info";
 import { WechatOutlined } from '@ant-design/icons';
 import { h5WxLogin } from '@/lib/utils/login';
+import useLoginByUrl from '@/lib/hooks/use-login-by-url';
 
 interface Result {
   code: string;
@@ -19,6 +20,7 @@ interface Result {
 }
 
 function Login() {
+  useLoginByUrl();
   const { message: antMessage } = App.useApp();
   const { refetch: refreshQrcodeInfo } = useGetQrcode();
   const { isLogined, userInfo, refresh: refreshUserInfo } = useUserLoginInfo();
