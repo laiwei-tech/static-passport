@@ -69,7 +69,7 @@ function Login() {
     {
       key: 'wechat',
       label: '微信登录',
-      children: !isWeChatBrowser() ? <div className="p-4">
+      children: isWeChatBrowser() ? <div className="p-4">
         <div className="flex items-center gap-4">
           <WechatOutlined className="text-2xl" />
           <div>检测到您正在使用微信浏览器，可使用微信一键登录</div>
