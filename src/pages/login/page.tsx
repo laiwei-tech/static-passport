@@ -88,7 +88,7 @@ function Login() {
     if (isLogined) {
       return 'h-[180px]';
     }
-    if (loginMode === 'wechat' && !isWeChatBrowser()) {
+    if (loginMode === 'wechat' && isWeChatBrowser()) {
       return 'h-[240px]';
     }
     if (loginMode === 'wechat') {
