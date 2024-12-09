@@ -27,7 +27,7 @@ function useLoginByUrl() {
         }
       });
     }
-  }, [loginByWechatCodeMutation]);
+  }, []);
 }
 
 export default useLoginByUrl;
