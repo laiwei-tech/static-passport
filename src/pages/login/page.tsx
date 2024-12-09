@@ -18,8 +18,8 @@ interface Result {
 
 function Login() {
   const { message: antMessage } = App.useApp();
-  useGetQrcode();
-  const { isLogined, userInfo } = useUserLoginInfo();
+  const { refetch: refreshQrcodeInfo } = useGetQrcode();
+  const { isLogined, userInfo, refresh: refreshUserInfo } = useUserLoginInfo();
   const loginByWechatCodeMutation = useLoginByWechatCode();
 
   const [loading, setLoading] = useState(false);
@@ -105,7 +105,10 @@ function Login() {
             'w-[380px] overflow-hidden rounded-[10px] bg-white transition-all duration-300',
           )}
         >
-          {isLogined ? <UserInfo userInfo={userInfo} /> : <Tabs
+          {isLogined ? <UserInfo userInfo={userInfo} refresh={() => {
+            refreshUserInfo();
+            refreshQrcodeInfo();
+          }} /> : <Tabs
             className="login-tabs"
             items={items}
             type="card"
