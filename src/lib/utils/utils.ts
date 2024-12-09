@@ -41,3 +41,24 @@ export const formatPhone = (phone: string | undefined) => {
   }
   return cleanPhone;
 };
+
+export const isWeChatBrowser = () => {
+  const userAgent = navigator.userAgent.toLowerCase();
+  return userAgent.indexOf("micromessenger") !== -1;
+}
+
+export const getIsDev = () => {
+  let envVersion = "production";
+  if (window.location.host === 'fe.dev.laiwei.tech' || window.location.host === 'localhost:7007') {
+    envVersion = "develop";
+  }
+  return envVersion;
+}
+
+export const getAppId = () => {
+  const isDev = getIsDev();
+  if (isDev === "develop") {
+    return "wxa38adb8ac1910b11";
+  }
+  return "wxdd953231cca7f46e";
+}

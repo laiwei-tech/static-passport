@@ -1,3 +1,8 @@
+import { Auth_Provider_Type_Enum } from "@/gen/laiweiv1/model_pb";
+import { publicClient } from "./client";
+import { create } from "@bufbuild/protobuf";
+import { getAppId } from "./utils";
+
 export interface WxLoginOptions {
   self_redirect?: boolean;
   appid: string;
@@ -54,3 +59,33 @@ export function WxLogin(options: WxLoginOptions): void {
     console.error(`Element with id "${options.id}" not found.`);
   }
 }
+
+export const h5WxLogin = async () => {
+  const { providerResponse } = await publicClient.beforeLogin({
+    providerType: Auth_Provider_Type_Enum.WECHAT_OFFICIAL_ACCOUNT,
+    providerId: {
+      provider: {
+        case: "wechatOfficialAccount",
+        value: {
+          appId: getAppId(),
+        },
+      },
+    },
+    providerRequest: {
+      provider: {
+        case: "wechatOfficialAccount",
+        value: {},
+      },
+    }
+  })
+
+  const appId = getAppId();
+  const redirectUrl = window.location.href;
+  const callbackState = providerResponse?.provider.value?.state;
+  const scopeType = "snsapi_userinfo";
+  const url = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appId}&redirect_uri=${encodeURIComponent(
+    redirectUrl
+  )}&response_type=code&scope=${scopeType}&state=${callbackState}#wechat_redirect`;
+  window.location.href = url;
+}
+
