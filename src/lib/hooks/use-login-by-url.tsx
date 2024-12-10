@@ -22,7 +22,12 @@ function useLoginByUrl() {
       loginByWechatCodeMutation.mutateAsync(qrcodeResult).then(({ user }) => {
         if (user) {
           sessionStorage.setItem('isLoginByPassport', 'true');
-          redirectToRedirectBackURL();
+          // 删除code和state参数，保留其他参数
+          urlParams.delete('code');
+          urlParams.delete('state');
+          const newSearch = urlParams.toString();
+          const newUrl = `${window.location.pathname}${newSearch ? `?${newSearch}` : ''}${window.location.hash}`;
+          window.history.replaceState({}, '', newUrl);
         } else {
           message.error('登录失败');
         }
