@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useLoginByWechatOfficialAccount } from '@/lib/hooks/api/login';
-import { isWeChatBrowser, redirectToRedirectBackURL } from '../utils/utils';
+import { isWeChatBrowser } from '../utils/utils';
 import { message } from 'antd';
 import { h5WxLogin } from '../utils/login';
 
