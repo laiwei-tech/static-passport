@@ -2,6 +2,13 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 import obfuscatorPlugin from 'vite-plugin-javascript-obfuscator';
+import { execSync } from 'child_process';
+
+function getVersion() {
+  const res = execSync('git rev-parse --short HEAD')
+  const hash = res.toString().trim()
+  return `${hash}`
+}
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -21,6 +28,9 @@ export default defineConfig({
       },
     }),
   ],
+  define: {
+    VERSION: `"${getVersion()}"`
+  },
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),

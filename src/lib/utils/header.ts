@@ -22,7 +22,7 @@ export function getHeader(input: string, init?: RequestInit) {
     [platform]: ClientInfo_Platform_Enum[ClientInfo_Platform_Enum.WEB],
     [platformId]: ClientInfo_PlatformId_WEB_Enum[ClientInfo_PlatformId_WEB_Enum.PASSPORT],
     [deviceId]: getDeviceId(),
-    [version]: "1.0.1",
+    [version]: VERSION,
     [contentDigest]: `laiwei-v1=${digest}`,
     "Content-Type": "application/json",
   };
