@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import LoginLogoIcon from '@/assets/logo-light.svg';
 import LoginBackground from '@/assets/login-background.png';
-import { App, Button, Tabs, TabsProps } from 'antd';
+import { App, Tabs, TabsProps } from 'antd';
 import './page.less';
 import { AccountForm } from './component/account-form';
 import { useGetQrcode, useLoginByWechatCode } from '@/lib/hooks/api/login';
@@ -10,7 +10,6 @@ import useMessageEventListener from '@/lib/hooks/use-message-event-listener';
 import { isWeChatBrowser, redirectToRedirectBackURL } from '@/lib/utils/utils';
 import { useUserLoginInfo } from "@/lib/hooks/user-login-info";
 import { UserInfo } from "./component/user-info";
-import { WechatOutlined } from '@ant-design/icons';
 import { h5WxLogin } from '@/lib/utils/login';
 import useLoginByUrl from '@/lib/hooks/use-login-by-url';
 
