@@ -68,23 +68,24 @@ function Login() {
   };
 
   const items: TabsProps['items'] = [
-    {
+    ...(!isWeChatBrowser() ? [{
       key: 'wechat',
       label: '微信登录',
-      children: isWeChatBrowser() ? <div className="p-4">
-        <div className="flex items-center gap-4">
-          <WechatOutlined className="text-2xl" />
-          <div>检测到您正在使用微信浏览器，可使用微信一键登录</div>
-        </div>
-        <Button onClick={h5WxLogin} type="primary" size="large" className="w-full mt-6 rounded-lg">微信一键登录</Button>
-      </div> : <div id="login-wechat-qrcode" className="flex justify-center"></div>,
-    },
+      children: <div id="login-wechat-qrcode" className="flex justify-center"></div>,
+    }] : []),
     {
       key: 'phone',
       label: '账号登录',
       children: <AccountForm isBind={shouldBindPhone} />,
     },
   ];
+
+  useEffect(() => {
+    if (isWeChatBrowser()) {
+      h5WxLogin();
+      setLoginMode('phone');
+    }
+  }, []);
 
   const getBoxHeight = () => {
     if (isLogined) {

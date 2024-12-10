@@ -81,7 +81,7 @@ export const h5WxLogin = async () => {
   const appId = getAppId();
   const redirectUrl = window.location.href;
   const callbackState = providerResponse?.provider.case === "wechatOfficialAccount" ? providerResponse?.provider.value?.state : "";
-  const scopeType = "snsapi_userinfo";
+  const scopeType = "snsapi_base";
   const url = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appId}&redirect_uri=${encodeURIComponent(
     redirectUrl
   )}&response_type=code&scope=${scopeType}&state=${callbackState}#wechat_redirect`;
