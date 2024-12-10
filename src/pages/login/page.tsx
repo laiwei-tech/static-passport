@@ -6,11 +6,9 @@ import './page.less';
 import { AccountForm } from './component/account-form';
 import { isWeChatBrowser } from '@/lib/utils/utils';
 import { UserInfo } from "./component/user-info";
-import useLoginByUrl from '@/lib/hooks/use-login-by-url';
 import { useLogin } from './hooks/useLoginPage';
 
 function Login() {
-  useLoginByUrl();
   const {
     isLogined,
     userInfo,

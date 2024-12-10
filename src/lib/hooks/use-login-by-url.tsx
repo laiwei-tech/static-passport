@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLoginByWechatOfficialAccount } from '@/lib/hooks/api/login';
 import { isWeChatBrowser } from '../utils/utils';
 import { message } from 'antd';
@@ -10,6 +10,7 @@ interface Result {
 }
 
 function useLoginByUrl() {
+  const [loading, setLoading] = useState(false);
   const loginByWechatCodeMutation = useLoginByWechatOfficialAccount();
 
   useEffect(() => {
@@ -19,6 +20,7 @@ function useLoginByUrl() {
 
     if (code && state) {
       const qrcodeResult: Result = { code, state };
+      setLoading(true);
       loginByWechatCodeMutation.mutateAsync(qrcodeResult).then(({ user }) => {
         if (user) {
           sessionStorage.setItem('isLoginByPassport', 'true');
@@ -31,11 +33,16 @@ function useLoginByUrl() {
         } else {
           message.error('登录失败');
         }
+      }).finally(() => {
+        setLoading(false);
       });
     } else if (isWeChatBrowser() && !sessionStorage.getItem('isLoginByPassport')) {
+      setLoading(true);
       h5WxLogin();
     }
   }, []);
+
+  return { loading };
 }
 
 export default useLoginByUrl;
