@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import LoginLogoIcon from '@/assets/logo-light.svg';
 import LoginBackground from '@/assets/login-background.png';
-import { Tabs, TabsProps } from 'antd';
+import { Spin, Tabs, TabsProps } from 'antd';
 import './page.less';
 import { AccountForm } from './component/account-form';
 import { isWeChatBrowser } from '@/lib/utils/utils';
@@ -10,6 +10,7 @@ import { useLogin } from './hooks/useLoginPage';
 
 function Login() {
   const {
+    isWrapLoading,
     isLogined,
     userInfo,
     loginMode,
@@ -61,21 +62,23 @@ function Login() {
         <h2 className="mb-8 flex items-center justify-center text-[30px] leading-[42px]">
           <img src={LoginLogoIcon} />
         </h2>
-        <div
-          className={classNames(
-            'w-[380px] overflow-hidden rounded-[10px] bg-white transition-all duration-300',
-            getBoxHeight(),
-          )}
-        >
-          {isLogined ? <UserInfo userInfo={userInfo} refresh={handleRefresh} /> : <Tabs
-            className="login-tabs"
-            items={items}
-            type="card"
-            onChange={loginMode => {
-              setLoginMode(loginMode);
-            }}
-          />}
-        </div>
+        <Spin spinning={isWrapLoading}>
+          <div
+            className={classNames(
+              'w-[380px] overflow-hidden rounded-[10px] bg-white transition-all duration-300',
+              getBoxHeight(),
+            )}
+          >
+            {isLogined ? <UserInfo userInfo={userInfo} refresh={handleRefresh} /> : <Tabs
+              className="login-tabs"
+              items={items}
+              type="card"
+              onChange={loginMode => {
+                setLoginMode(loginMode);
+              }}
+            />}
+          </div>
+        </Spin>
       </div>
     </div>
   );

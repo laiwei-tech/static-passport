@@ -17,10 +17,7 @@ function useLoginByUrl(refresh: () => void) {
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
     const state = urlParams.get('state');
-
-    console.log('code', code);
-    console.log('state', state);
-
+    
     if (code && state) {
       const qrcodeResult: Result = { code, state };
       setLoading(true);

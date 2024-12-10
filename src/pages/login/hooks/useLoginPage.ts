@@ -13,6 +13,7 @@ interface Result {
 }
 
 export function useLogin() {
+  const [isWrapLoading, setIsWrapLoading] = useState(false);
   const { message: antMessage } = App.useApp();
   const { refetch: refreshQrcodeInfo } = useGetQrcode();
   const { isLogined, userInfo, refresh: refreshUserInfo } = useUserLoginInfo();
@@ -43,6 +44,7 @@ export function useLogin() {
   useEffect(() => {
     if (isWeChatBrowser()) {
       setLoginMode('phone');
+      setIsWrapLoading(true);
     }
   }, []);
 
@@ -69,6 +71,7 @@ export function useLogin() {
 
   return {
     isLogined,
+    isWrapLoading,
     userInfo,
     loginMode,
     shouldBindPhone,
