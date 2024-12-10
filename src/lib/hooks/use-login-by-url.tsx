@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useLoginByWechatCode } from '@/lib/hooks/api/login';
-import { redirectToRedirectBackURL } from '../utils/utils';
+import { isWeChatBrowser, redirectToRedirectBackURL } from '../utils/utils';
 import { message } from 'antd';
+import { h5WxLogin } from '../utils/login';
 
 interface Result {
   code: string;
@@ -26,6 +27,8 @@ function useLoginByUrl() {
           message.error('登录失败');
         }
       });
+    } else if (isWeChatBrowser()) {
+      h5WxLogin();
     }
   }, []);
 }

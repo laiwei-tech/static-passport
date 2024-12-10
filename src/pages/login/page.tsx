@@ -81,7 +81,6 @@ function Login() {
 
   useEffect(() => {
     if (isWeChatBrowser()) {
-      h5WxLogin();
       setLoginMode('phone');
     }
   }, []);
