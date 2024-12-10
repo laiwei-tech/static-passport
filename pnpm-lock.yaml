@@ -1,4 +1,4 @@
-lockfileVersion: 5.3
+lockfileVersion: '9.0'
 
 specifiers:
   '@ant-design/cssinjs': ^1.22.0
