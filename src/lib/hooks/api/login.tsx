@@ -2,7 +2,7 @@ import { Auth_Provider_Type_Enum } from '@/gen/laiweiv1/model_pb';
 import { WECHAT_WEBSITE_APP_ID } from '@/lib/constant';
 import { publicClient } from '@/lib/utils/client';
 import { WxLogin } from '@/lib/utils/login';
-import { getAppId, getDeviceId, isWeChatBrowser } from '@/lib/utils/utils';
+import { getAppId, isWeChatBrowser } from '@/lib/utils/utils';
 import { useMutation, useQuery } from 'react-query';
 
 export const useGetQrcode = () => {
