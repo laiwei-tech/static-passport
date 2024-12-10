@@ -59,13 +59,40 @@ export const useLoginByWechatCode = () => {
         provider: {
           case: 'wechatWebsiteApp',
           value: {
-            appId: getAppId(),
+            appId: WECHAT_WEBSITE_APP_ID,
           },
         },
       },
       providerRequest: {
         provider: {
           case: 'wechatWebsiteApp',
+          value: {
+            code: qrcodeResult.code,
+            state: qrcodeResult.state,
+          },
+        },
+      },
+    });
+
+    return res;
+  });
+};
+
+export const useLoginByWechatOfficialAccount = () => {
+  return useMutation(async (qrcodeResult: { code: string; state: string }) => {
+    const res = await publicClient.login({
+      providerType: Auth_Provider_Type_Enum.WECHAT_OFFICIAL_ACCOUNT,
+      providerId: {
+        provider: {
+          case: 'wechatOfficialAccount',
+          value: {
+            appId: getAppId(),
+          },
+        },
+      },
+      providerRequest: {
+        provider: {
+          case: 'wechatOfficialAccount',
           value: {
             code: qrcodeResult.code,
             state: qrcodeResult.state,

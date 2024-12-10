@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useLoginByWechatCode } from '@/lib/hooks/api/login';
+import { useLoginByWechatOfficialAccount } from '@/lib/hooks/api/login';
 import { isWeChatBrowser, redirectToRedirectBackURL } from '../utils/utils';
 import { message } from 'antd';
 import { h5WxLogin } from '../utils/login';
@@ -10,7 +10,7 @@ interface Result {
 }
 
 function useLoginByUrl() {
-  const loginByWechatCodeMutation = useLoginByWechatCode();
+  const loginByWechatCodeMutation = useLoginByWechatOfficialAccount();
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
