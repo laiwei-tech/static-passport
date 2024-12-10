@@ -13,7 +13,7 @@ interface Result {
 }
 
 export function useLogin() {
-  const { loading: loginByUrlLoading } = useLoginByUrl();
+  useLoginByUrl();
   const { message: antMessage } = App.useApp();
   const { refetch: refreshQrcodeInfo } = useGetQrcode();
   const { isLogined, userInfo, refresh: refreshUserInfo } = useUserLoginInfo();
@@ -47,7 +47,7 @@ export function useLogin() {
   }, []);
 
   const handleLoginByWechatCode = async () => {
-    if (loading || loginByUrlLoading) return;
+    if (loading) return;
     
     setLoading(true);
     const { user } = await loginByWechatCodeMutation.mutateAsync(qrcodeResult);
