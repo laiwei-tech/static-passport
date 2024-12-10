@@ -1,70 +1,24 @@
-import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import LoginLogoIcon from '@/assets/logo-light.svg';
 import LoginBackground from '@/assets/login-background.png';
-import { App, Tabs, TabsProps } from 'antd';
+import { Tabs, TabsProps } from 'antd';
 import './page.less';
 import { AccountForm } from './component/account-form';
-import { useGetQrcode, useLoginByWechatCode } from '@/lib/hooks/api/login';
-import useMessageEventListener from '@/lib/hooks/use-message-event-listener';
-import { isWeChatBrowser, redirectToRedirectBackURL } from '@/lib/utils/utils';
-import { useUserLoginInfo } from "@/lib/hooks/user-login-info";
+import { isWeChatBrowser } from '@/lib/utils/utils';
 import { UserInfo } from "./component/user-info";
-import { h5WxLogin } from '@/lib/utils/login';
 import useLoginByUrl from '@/lib/hooks/use-login-by-url';
-
-interface Result {
-  code: string;
-  state: string;
-}
+import { useLogin } from './hooks/useLoginPage';
 
 function Login() {
   useLoginByUrl();
-  const { message: antMessage } = App.useApp();
-  const { refetch: refreshQrcodeInfo } = useGetQrcode();
-  const { isLogined, userInfo, refresh: refreshUserInfo } = useUserLoginInfo();
-  const loginByWechatCodeMutation = useLoginByWechatCode();
-
-  const [loading, setLoading] = useState(false);
-  const [loginMode, setLoginMode] = useState('wechat');
-  const message = useMessageEventListener();
-  const [qrcodeResult, setQrcodeResult] = useState<Result>({
-    code: '',
-    state: '',
-  });
-  // 需要绑定手机号
-  const [shouldBindPhone, setShouldBindPhone] = useState(false);
-
-  // 二维码登录获取message
-  useEffect(() => {
-    if (message) {
-      setQrcodeResult(message);
-    }
-  }, [message]);
-
-  // 监听到二维码登录的code，调用登录接口
-  useEffect(() => {
-    if (qrcodeResult.code) {
-      handleLoginByWechatCode();
-    }
-  }, [qrcodeResult]);
-
-  const handleLoginByWechatCode = async () => {
-    if (loading) {
-      return;
-    }
-    setLoading(true);
-
-    const { user } = await loginByWechatCodeMutation.mutateAsync(qrcodeResult);
-    if (user) {
-      sessionStorage.setItem('isLoginByPassport', 'true');
-      redirectToRedirectBackURL();
-    } else {
-      setShouldBindPhone(true);
-      setLoginMode('phone');
-      antMessage.info('请绑定手机号');
-    }
-  };
+  const {
+    isLogined,
+    userInfo,
+    loginMode,
+    shouldBindPhone,
+    setLoginMode,
+    handleRefresh
+  } = useLogin();
 
   const items: TabsProps['items'] = [
     ...(!isWeChatBrowser() ? [{
@@ -78,12 +32,6 @@ function Login() {
       children: <AccountForm isBind={shouldBindPhone} />,
     },
   ];
-
-  useEffect(() => {
-    if (isWeChatBrowser()) {
-      setLoginMode('phone');
-    }
-  }, []);
 
   const getBoxHeight = () => {
     if (isLogined) {
@@ -121,10 +69,7 @@ function Login() {
             getBoxHeight(),
           )}
         >
-          {isLogined ? <UserInfo userInfo={userInfo} refresh={() => {
-            refreshUserInfo();
-            refreshQrcodeInfo();
-          }} /> : <Tabs
+          {isLogined ? <UserInfo userInfo={userInfo} refresh={handleRefresh} /> : <Tabs
             className="login-tabs"
             items={items}
             type="card"

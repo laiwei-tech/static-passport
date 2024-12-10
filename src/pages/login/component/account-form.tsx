@@ -1,87 +1,19 @@
-import { App, Button, Col, Form, Input, InputRef, Row, Select } from 'antd';
+import { Button, Col, Form, Input, Row, Select } from 'antd';
 import { MobileOutlined, LockOutlined } from '@ant-design/icons';
 import { PHONE_CODE } from '@/lib/constant/phone-code';
-import { useCountdown } from '@/lib/hooks/code-countdown';
-import { useBindPhone, useGetSMSCode, useLoginWithSMS } from '@/lib/hooks/api/login';
-import { useRef, useState } from 'react';
-import { redirectToRedirectBackURL } from '@/lib/utils/utils';
-
-export type FieldType = {
-  phone_number?: string;
-  code?: string;
-  phone_code?: string;
-};
+import { FieldType, useAccountForm } from '../hooks/useAccountForm';
 
 export const AccountForm = ({ isBind }: { isBind: boolean }) => {
-  const { message } = App.useApp();
-  const bindPhoneMutation = useBindPhone();
-  const loginWithSMSMutation = useLoginWithSMS();
-
-  const [loading, setLoading] = useState(false);
-  const [loginLoading, setLoginLoading] = useState(false);
-  const getSMSCodeMutation = useGetSMSCode();
-  const { count, startCountdown, isCounting } = useCountdown(60);
-
-  const inputRef = useRef<InputRef>(null);
-
-  const [form] = Form.useForm<FieldType>();
-
-  const handleSendCode = () => {
-    if (!form.getFieldValue('phone_number')) {
-      message.error('请输入手机号');
-      return;
-    }
-    setLoading(true);
-    getSMSCodeMutation
-      .mutateAsync({
-        phoneCode: form.getFieldValue('phone_code'),
-        phoneNumber: form.getFieldValue('phone_number'),
-      })
-      .then(res => {
-        if (res?.case === 'sms') {
-          res.value.smsCode && message.info(res.value.smsCode);
-        }
-        startCountdown();
-        setLoading(false);
-        inputRef.current?.focus();
-      })
-      .catch(() => {
-        setLoading(false);
-      });
-  };
-
-  const onFinish = (values: FieldType) => {
-    if (isBind && values.code) {
-      setLoginLoading(true);
-      bindPhoneMutation
-        .mutateAsync({
-          phone: `${values.phone_code} ${values.phone_number}`,
-          code: values.code,
-        })
-        .then(() => {
-          sessionStorage.setItem('isLoginByPassport', 'true');
-          message.success('绑定成功');
-          redirectToRedirectBackURL();
-        })
-        .finally(() => {
-          setLoginLoading(false);
-        });
-    } else if (values.code) {
-      loginWithSMSMutation
-        .mutateAsync({
-          phone: `${values.phone_code} ${values.phone_number}`,
-          smsCode: values.code,
-        })
-        .then(() => {
-          sessionStorage.setItem('isLoginByPassport', 'true');
-          message.success('登录成功');
-          redirectToRedirectBackURL();
-        })
-        .finally(() => {
-          setLoginLoading(false);
-        });
-    }
-  };
+  const {
+    form,
+    loading,
+    loginLoading,
+    count,
+    isCounting,
+    inputRef,
+    handleSendCode,
+    onFinish
+  } = useAccountForm(isBind);
 
   return (
     <div className="p-5">
