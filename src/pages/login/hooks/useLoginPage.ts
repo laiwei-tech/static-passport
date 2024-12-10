@@ -6,6 +6,7 @@ import useMessageEventListener from '@/lib/hooks/use-message-event-listener';
 import { isWeChatBrowser, redirectToRedirectBackURL } from '@/lib/utils/utils';
 import { useUserLoginInfo } from "@/lib/hooks/user-login-info";
 import useLoginByUrl from '@/lib/hooks/use-login-by-url';
+import { loginStore } from '../store';
 
 interface Result {
   code: string;
@@ -13,7 +14,7 @@ interface Result {
 }
 
 export function useLogin() {
-  const [isWrapLoading, setIsWrapLoading] = useState(false);
+  const { isWrapLoading, setIsWrapLoading } = loginStore();
   const { message: antMessage } = App.useApp();
   const { refetch: refreshQrcodeInfo } = useGetQrcode();
   const { isLogined, userInfo, refresh: refreshUserInfo } = useUserLoginInfo();

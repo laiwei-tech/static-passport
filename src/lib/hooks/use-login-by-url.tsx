@@ -3,6 +3,7 @@ import { useLoginByWechatOfficialAccount } from '@/lib/hooks/api/login';
 import { isWeChatBrowser } from '../utils/utils';
 import { message } from 'antd';
 import { h5WxLogin } from '../utils/login';
+import { loginStore } from '@/pages/login/store';
 
 interface Result {
   code: string;
@@ -11,6 +12,7 @@ interface Result {
 
 function useLoginByUrl(refresh: () => void) {
   const [loading, setLoading] = useState(false);
+  const { isWrapLoading, setIsWrapLoading } = loginStore();
   const loginByWechatCodeMutation = useLoginByWechatOfficialAccount();
 
   useEffect(() => {
@@ -36,6 +38,7 @@ function useLoginByUrl(refresh: () => void) {
         }
       }).finally(() => {
         setLoading(false);
+        setIsWrapLoading(false);
       });
     } else if (isWeChatBrowser() && !sessionStorage.getItem('isLoginByPassport')) {
       setLoading(true);
