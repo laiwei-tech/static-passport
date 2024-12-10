@@ -1,3 +1,5 @@
+declare const VERSION: string;
+
 import { ClientInfo_Platform_Enum, ClientInfo_PlatformId_WEB_Enum } from "@/gen/laiweiv1/model_pb";
 import { getBaseUrl } from "./config";
 import getDigest from "./digest";
