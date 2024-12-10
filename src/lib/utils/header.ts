@@ -1,9 +1,9 @@
-declare const VERSION: string;
-
 import { ClientInfo_Platform_Enum, ClientInfo_PlatformId_WEB_Enum } from "@/gen/laiweiv1/model_pb";
 import { getBaseUrl } from "./config";
 import getDigest from "./digest";
 import { getDeviceId } from "./utils";
+
+declare const VERSION: string;
 
 // 请求头,用变量的方式，更好的支持代码混淆
 const platform = "X-Client-Platform";
