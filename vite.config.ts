@@ -19,7 +19,7 @@ export default defineConfig({
       apply: 'build',
       include: ['src/lib/**/*.js', 'src/lib/**/*.ts'],
       options: {
-        debugProtection: true,
+        // debugProtection: true,
         stringArray: true,
         stringArrayEncoding: ['rc4', 'base64'],
         stringArrayThreshold: 1,
@@ -34,6 +34,17 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+        },
+      },
     },
   },
 });

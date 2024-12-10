@@ -10,21 +10,28 @@ export const useUserLoginInfo = () => {
     const isLoginedInPassport = localStorage.getItem('isLoginedInPassport');
 
     if (isLoginedInPassport) {
-      privateClientWithoutPrompt.sharedMyUser({}).then(res => {
-        if (res.user) {
-          setIsLogined(true);
-          setUserInfo(res.user);
-        } else {
-          setIsLogined(false);
-        }
-      })
+      getUserInfo();
     } else {
       setIsLogined(false);
     }
   }, [])
 
+  const getUserInfo = () => {
+    privateClientWithoutPrompt.sharedMyUser({}).then(res => {
+      if (res.user) {
+        setIsLogined(true);
+        setUserInfo(res.user);
+      } else {
+        setIsLogined(false);
+      }
+    }).catch(() => {
+      setIsLogined(false);
+    })
+  }
+
   return {
     isLogined,
     userInfo,
+    refresh: getUserInfo,
   }
 };
