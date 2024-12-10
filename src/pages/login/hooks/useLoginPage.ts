@@ -13,10 +13,10 @@ interface Result {
 }
 
 export function useLogin() {
-  useLoginByUrl();
   const { message: antMessage } = App.useApp();
   const { refetch: refreshQrcodeInfo } = useGetQrcode();
   const { isLogined, userInfo, refresh: refreshUserInfo } = useUserLoginInfo();
+  useLoginByUrl(refreshUserInfo);
   const loginByWechatCodeMutation = useLoginByWechatCode();
 
   const [loading, setLoading] = useState(false);

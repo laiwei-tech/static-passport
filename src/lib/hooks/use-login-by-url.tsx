@@ -9,7 +9,7 @@ interface Result {
   state: string;
 }
 
-function useLoginByUrl() {
+function useLoginByUrl(refresh: () => void) {
   const [loading, setLoading] = useState(false);
   const loginByWechatCodeMutation = useLoginByWechatOfficialAccount();
 
@@ -17,6 +17,9 @@ function useLoginByUrl() {
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
     const state = urlParams.get('state');
+
+    console.log('code', code);
+    console.log('state', state);
 
     if (code && state) {
       const qrcodeResult: Result = { code, state };
@@ -30,6 +33,7 @@ function useLoginByUrl() {
           const newSearch = urlParams.toString();
           const newUrl = `${window.location.pathname}${newSearch ? `?${newSearch}` : ''}${window.location.hash}`;
           window.history.replaceState({}, '', newUrl);
+          refresh();
         } else {
           message.error('登录失败');
         }
