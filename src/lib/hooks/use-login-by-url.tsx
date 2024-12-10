@@ -12,7 +12,7 @@ interface Result {
 
 function useLoginByUrl(refresh: () => void) {
   const [loading, setLoading] = useState(false);
-  const { isWrapLoading, setIsWrapLoading } = loginStore();
+  const { setIsWrapLoading } = loginStore();
   const loginByWechatCodeMutation = useLoginByWechatOfficialAccount();
 
   useEffect(() => {
