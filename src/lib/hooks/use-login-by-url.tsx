@@ -32,7 +32,7 @@ function useLoginByUrl() {
           message.error('登录失败');
         }
       });
-    } else if (isWeChatBrowser()) {
+    } else if (isWeChatBrowser() && !sessionStorage.getItem('isLoginByPassport')) {
       h5WxLogin();
     }
   }, []);
