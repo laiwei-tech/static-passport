@@ -1,7 +1,7 @@
 import { Button, Col, Form, Input, Row, Select } from 'antd';
 import { MobileOutlined, LockOutlined } from '@ant-design/icons';
 import { PHONE_CODE } from '@/lib/constant/phone-code';
-import { FieldType, useAccountForm } from '../hooks/useAccountForm';
+import { FieldType, useAccountForm } from '../hooks/use-account-form';
 
 export const AccountForm = ({ isBind }: { isBind: boolean }) => {
   const {

@@ -6,7 +6,7 @@ import './page.less';
 import { AccountForm } from './component/account-form';
 import { isWeChatBrowser } from '@/lib/utils/utils';
 import { UserInfo } from "./component/user-info";
-import { useLogin } from './hooks/useLoginPage';
+import { useLogin } from './hooks/use-login-page';
 import { useMemo } from 'react';
 import { LoginResult } from './component/login-result';
 
