@@ -174,14 +174,11 @@ export const useBindPhone = () => {
       providerRequest: {
         provider: {
           case: 'wechatWebsiteApp',
-          value: {
-            // @ts-ignore
-            phone
-          }
+          value: {}
         },
-        phone,
-        smsCode: code,
       },
+      phone: phone,
+      smsCode: code,
     });
 
     return res;
