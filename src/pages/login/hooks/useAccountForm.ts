@@ -1,6 +1,6 @@
 // src/pages/login/hooks/useAccountForm.ts
 import { Form, App, InputRef } from 'antd';
-import { useRef, useState } from 'react';
+import { act, useRef, useState } from 'react';
 import { useBindPhone, useGetSMSCode, useLoginWithSMS } from '@/lib/hooks/api/login';
 import { useCountdown } from '@/lib/hooks/code-countdown';
 import { redirectToRedirectBackURL } from '@/lib/utils/utils';
@@ -51,7 +51,7 @@ export const useAccountForm = (isBind: boolean) => {
   };
 
   const onFinish = (values: FieldType) => {
-    if (isBind && values.code) {
+    if ((isBind || action === 'bind') && values.code) {
       setLoginLoading(true);
       bindPhoneMutation
         .mutateAsync({
@@ -60,8 +60,12 @@ export const useAccountForm = (isBind: boolean) => {
         })
         .then(() => {
           sessionStorage.setItem('isLoginByPassport', 'true');
-          message.success('绑定成功');
-          redirectToRedirectBackURL();
+          if (action === 'bind') {
+            refreshUserInfo();
+          } else {
+            message.success('绑定成功');
+            redirectToRedirectBackURL();
+          }
         })
         .finally(() => {
           setLoginLoading(false);
