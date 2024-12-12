@@ -63,3 +63,6 @@ jobs:
 
       - name: Upload
         run: ossutil sync -u --delete -f -j 1000 ./dist/ oss://laiwei-fe/passport/
+
+      - name: Upload to www.laiwei.com
+        run: ossutil sync -u --delete -f -j 1000 ./dist/ oss://laiwei-www/passport/
