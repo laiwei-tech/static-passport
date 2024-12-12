@@ -1,86 +1,49 @@
-import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import LoginLogoIcon from '@/assets/logo-light.svg';
 import LoginBackground from '@/assets/login-background.png';
-import { App, Tabs, TabsProps } from 'antd';
+import { Spin, Tabs, TabsProps } from 'antd';
 import './page.less';
 import { AccountForm } from './component/account-form';
-import { useGetQrcode, useLoginByWechatCode } from '@/lib/hooks/api/login';
-import useMessageEventListener from '@/lib/hooks/use-message-event-listener';
-import { redirectToRedirectBackURL } from '@/lib/utils/utils';
-import { useUserLoginInfo } from "@/lib/hooks/user-login-info";
+import { isWeChatBrowser } from '@/lib/utils/utils';
 import { UserInfo } from "./component/user-info";
-
-interface Result {
-  code: string;
-  state: string;
-}
+import { useLogin } from './hooks/useLoginPage';
 
 function Login() {
-  const { message: antMessage } = App.useApp();
-  useGetQrcode();
-  const { isLogined, userInfo } = useUserLoginInfo();
-  const loginByWechatCodeMutation = useLoginByWechatCode();
-
-  const [loading, setLoading] = useState(false);
-  const [loginMode, setLoginMode] = useState('wechat');
-  const message = useMessageEventListener();
-  const [qrcodeResult, setQrcodeResult] = useState<Result>({
-    code: '',
-    state: '',
-  });
-  // 需要绑定手机号
-  const [shouldBindPhone, setShouldBindPhone] = useState(false);
-
-  // 二维码登录获取message
-  useEffect(() => {
-    if (message) {
-      setQrcodeResult(message);
-    }
-  }, [message]);
-
-  // 监听到二维码登录的code，调用登录接口
-  useEffect(() => {
-    if (qrcodeResult.code) {
-      handleLoginByWechatCode();
-    }
-  }, [qrcodeResult]);
-
-  const handleLoginByWechatCode = async () => {
-    if (loading) {
-      return;
-    }
-    setLoading(true);
-
-    const { user } = await loginByWechatCodeMutation.mutateAsync(qrcodeResult);
-    if (user) {
-      sessionStorage.setItem('isLoginByPassport', 'true');
-      redirectToRedirectBackURL();
-    } else {
-      setShouldBindPhone(true);
-      setLoginMode('phone');
-      antMessage.info('请绑定手机号');
-    }
-  };
+  const {
+    isWrapLoading,
+    isLogined,
+    userInfo,
+    loginMode,
+    shouldBindPhone,
+    setLoginMode,
+    handleRefresh
+  } = useLogin();
 
   const items: TabsProps['items'] = [
-    {
+    ...(!isWeChatBrowser() ? [{
       key: 'wechat',
       label: '微信登录',
-      children: (
-        <>
-          {!qrcodeResult.code && (
-            <div id="login-wechat-qrcode" className="flex justify-center"></div>
-          )}
-        </>
-      ),
-    },
+      children: <div id="login-wechat-qrcode" className="flex justify-center"></div>,
+    }] : []),
     {
       key: 'phone',
       label: '账号登录',
       children: <AccountForm isBind={shouldBindPhone} />,
     },
   ];
+
+  const getBoxHeight = () => {
+    if (isLogined) {
+      return 'h-[180px]';
+    }
+    if (loginMode === 'wechat' && isWeChatBrowser()) {
+      return 'h-[240px]';
+    }
+    if (loginMode === 'wechat') {
+      return 'h-[480px]';
+    }
+    return 'h-[310px]';
+  };
 
   return (
     <div className="relative flex h-screen w-screen select-none items-center justify-center overflow-hidden bg-black">
@@ -99,21 +62,23 @@ function Login() {
         <h2 className="mb-8 flex items-center justify-center text-[30px] leading-[42px]">
           <img src={LoginLogoIcon} />
         </h2>
-        <div
-          className={classNames(
-            isLogined ? 'h-[180px]' : loginMode === 'wechat' ? 'h-[480px]' : 'h-[310px]',
-            'w-[380px] overflow-hidden rounded-[10px] bg-white transition-all duration-300',
-          )}
-        >
-          {isLogined ? <UserInfo userInfo={userInfo} /> : <Tabs
-            className="login-tabs"
-            items={items}
-            type="card"
-            onChange={loginMode => {
-              setLoginMode(loginMode);
-            }}
-          />}
-        </div>
+        <Spin spinning={isWrapLoading}>
+          <div
+            className={classNames(
+              'w-[380px] overflow-hidden rounded-[10px] bg-white transition-all duration-300',
+              getBoxHeight(),
+            )}
+          >
+            {isLogined ? <UserInfo userInfo={userInfo} refresh={handleRefresh} /> : <Tabs
+              className="login-tabs"
+              items={items}
+              type="card"
+              onChange={loginMode => {
+                setLoginMode(loginMode);
+              }}
+            />}
+          </div>
+        </Spin>
       </div>
     </div>
   );

@@ -23,6 +23,10 @@ export const themeConfig: ThemeConfig = {
       paddingXXS: 0,
       controlHeight: 40,
       optionSelectedBg: "rgb(237,237,237)"
+    },
+    Spin: {
+      colorBgMask: "rgb(255,255,255)",
+      colorFillSecondary: "rgb(255,255,255)"
     }
   }
 };

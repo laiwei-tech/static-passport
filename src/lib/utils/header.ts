@@ -3,6 +3,8 @@ import { getBaseUrl } from "./config";
 import getDigest from "./digest";
 import { getDeviceId } from "./utils";
 
+declare const VERSION: string;
+
 // 请求头,用变量的方式，更好的支持代码混淆
 const platform = "X-Client-Platform";
 const platformId = "X-Client-Platform-Id";
@@ -22,7 +24,7 @@ export function getHeader(input: string, init?: RequestInit) {
     [platform]: ClientInfo_Platform_Enum[ClientInfo_Platform_Enum.WEB],
     [platformId]: ClientInfo_PlatformId_WEB_Enum[ClientInfo_PlatformId_WEB_Enum.PASSPORT],
     [deviceId]: getDeviceId(),
-    [version]: "1.0.1",
+    [version]: VERSION,
     [contentDigest]: `laiwei-v1=${digest}`,
     "Content-Type": "application/json",
   };

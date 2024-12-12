@@ -5,3 +5,9 @@
 }
 @tailwind components;
 @tailwind utilities;
+
+.ant-spin-nested-loading >div>.ant-spin {
+  background: #fff;
+  max-height: 100%;
+  border-radius: 10px;
+}

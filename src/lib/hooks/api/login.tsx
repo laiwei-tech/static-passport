@@ -2,12 +2,15 @@ import { Auth_Provider_Type_Enum } from '@/gen/laiweiv1/model_pb';
 import { WECHAT_WEBSITE_APP_ID } from '@/lib/constant';
 import { publicClient } from '@/lib/utils/client';
 import { WxLogin } from '@/lib/utils/login';
+import { getAppId, isWeChatBrowser } from '@/lib/utils/utils';
 import { useMutation, useQuery } from 'react-query';
 
 export const useGetQrcode = () => {
   return useQuery(
     'qrcodeInfo',
     async () => {
+      if (isWeChatBrowser()) return;
+
       const res = await publicClient.beforeLogin({
         providerType: Auth_Provider_Type_Enum.WECHAT_WEBSITE_APP,
         providerId: {
@@ -63,6 +66,33 @@ export const useLoginByWechatCode = () => {
       providerRequest: {
         provider: {
           case: 'wechatWebsiteApp',
+          value: {
+            code: qrcodeResult.code,
+            state: qrcodeResult.state,
+          },
+        },
+      },
+    });
+
+    return res;
+  });
+};
+
+export const useLoginByWechatOfficialAccount = () => {
+  return useMutation(async (qrcodeResult: { code: string; state: string }) => {
+    const res = await publicClient.login({
+      providerType: Auth_Provider_Type_Enum.WECHAT_OFFICIAL_ACCOUNT,
+      providerId: {
+        provider: {
+          case: 'wechatOfficialAccount',
+          value: {
+            appId: getAppId(),
+          },
+        },
+      },
+      providerRequest: {
+        provider: {
+          case: 'wechatOfficialAccount',
           value: {
             code: qrcodeResult.code,
             state: qrcodeResult.state,
