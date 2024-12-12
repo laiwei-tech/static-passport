@@ -12,7 +12,7 @@ interface Result {
 
 function useLoginByUrl(refresh: () => void) {
   const [loading, setLoading] = useState(false);
-  const { setIsWrapLoading } = loginStore();
+  const { setIsWrapLoading, action } = loginStore();
   const loginByWechatCodeMutation = useLoginByWechatOfficialAccount();
 
   useEffect(() => {
@@ -34,7 +34,11 @@ function useLoginByUrl(refresh: () => void) {
           window.history.replaceState({}, '', newUrl);
           refresh();
         } else {
-          message.error('登录失败');
+          if (action === 'bind') {
+            message.warning('请输入手机号进行账号绑定');
+          } else {
+            message.error('登录失败');
+          }
         }
       }).finally(() => {
         setLoading(false);
