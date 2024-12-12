@@ -74,10 +74,10 @@ export const useAccountForm = (isBind: boolean) => {
         })
         .then(() => {
           sessionStorage.setItem('isLoginByPassport', 'true');
-          message.success('登录成功');
           if (action === 'bind') {
             refreshUserInfo();
           } else {
+            message.success('登录成功');
             redirectToRedirectBackURL();
           }
         })
