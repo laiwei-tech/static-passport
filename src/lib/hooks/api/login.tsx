@@ -167,7 +167,7 @@ export const useBindPhone = () => {
         provider: {
           case: 'wechatWebsiteApp',
           value: {
-            appId: WECHAT_WEBSITE_APP_ID,
+            appId: getAppId(),
           },
         },
       },
