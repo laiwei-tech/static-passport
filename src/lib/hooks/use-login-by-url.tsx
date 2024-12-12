@@ -34,11 +34,7 @@ function useLoginByUrl(refresh: () => void) {
           window.history.replaceState({}, '', newUrl);
           refresh();
         } else {
-          if (action === 'bind') {
-            message.warning('请输入手机号进行账号绑定');
-          } else {
-            message.error('登录失败');
-          }
+          message.warning('请输入手机号进行账号绑定');
         }
       }).finally(() => {
         setLoading(false);
