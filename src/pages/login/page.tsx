@@ -37,6 +37,9 @@ function Login() {
 
   const getBoxHeight = () => {
     if (isLogined) {
+      if (action === 'bind') {
+        return 'h-[220px]';
+      }
       return 'h-[180px]';
     }
     if (loginMode === 'wechat' && isWeChatBrowser()) {
