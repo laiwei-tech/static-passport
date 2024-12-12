@@ -26,17 +26,17 @@ function useLoginByUrl(refresh: () => void) {
       loginByWechatCodeMutation.mutateAsync(qrcodeResult).then(({ user }) => {
         if (user) {
           sessionStorage.setItem('isLoginByPassport', 'true');
-          // 删除code和state参数，保留其他参数
-          urlParams.delete('code');
-          urlParams.delete('state');
-          const newSearch = urlParams.toString();
-          const newUrl = `${window.location.pathname}${newSearch ? `?${newSearch}` : ''}${window.location.hash}`;
-          window.history.replaceState({}, '', newUrl);
           refresh();
         } else {
-          message.error('登录失败');
+          message.warning('请输入手机号进行账号绑定');
         }
       }).finally(() => {
+        // 删除code和state参数，保留其他参数
+        urlParams.delete('code');
+        urlParams.delete('state');
+        const newSearch = urlParams.toString();
+        const newUrl = `${window.location.pathname}${newSearch ? `?${newSearch}` : ''}${window.location.hash}`;
+        window.history.replaceState({}, '', newUrl);
         setLoading(false);
         setIsWrapLoading(false);
       });

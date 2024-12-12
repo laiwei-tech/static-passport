@@ -18,7 +18,7 @@ export function useLogin() {
   const [searchParams] = useSearchParams();
   const action = searchParams.get('action');
 
-  const { isWrapLoading, setIsWrapLoading, setAction } = loginStore();
+  const { isWrapLoading, setIsWrapLoading, setAction, setRefreshUserInfo } = loginStore();
   const { message: antMessage } = App.useApp();
   const { refetch: refreshQrcodeInfo } = useGetQrcode();
   const { isLogined, userInfo, refresh: refreshUserInfo } = useUserLoginInfo();
@@ -33,6 +33,10 @@ export function useLogin() {
     state: '',
   });
   const [shouldBindPhone, setShouldBindPhone] = useState(false);
+
+  useEffect(() => {
+    setRefreshUserInfo(refreshUserInfo);
+  }, []);
 
   useEffect(() => {
     if (action) {

@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import { useBindPhone, useGetSMSCode, useLoginWithSMS } from '@/lib/hooks/api/login';
 import { useCountdown } from '@/lib/hooks/code-countdown';
 import { redirectToRedirectBackURL } from '@/lib/utils/utils';
+import { loginStore } from '../store';
 
 export type FieldType = {
   phone_number?: string;
@@ -13,6 +14,7 @@ export type FieldType = {
 
 export const useAccountForm = (isBind: boolean) => {
   const { message } = App.useApp();
+  const { action, refreshUserInfo } = loginStore();
   const bindPhoneMutation = useBindPhone();
   const loginWithSMSMutation = useLoginWithSMS();
   const getSMSCodeMutation = useGetSMSCode();
@@ -73,7 +75,11 @@ export const useAccountForm = (isBind: boolean) => {
         .then(() => {
           sessionStorage.setItem('isLoginByPassport', 'true');
           message.success('登录成功');
-          redirectToRedirectBackURL();
+          if (action === 'bind') {
+            refreshUserInfo();
+          } else {
+            redirectToRedirectBackURL();
+          }
         })
         .finally(() => {
           setLoginLoading(false);
