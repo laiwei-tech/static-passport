@@ -7,6 +7,7 @@ import { isWeChatBrowser, redirectToRedirectBackURL } from '@/lib/utils/utils';
 import { useUserLoginInfo } from "@/lib/hooks/user-login-info";
 import useLoginByUrl from '@/lib/hooks/use-login-by-url';
 import { loginStore } from '../store';
+import { useSearchParams } from 'react-router-dom';
 
 interface Result {
   code: string;
@@ -14,7 +15,10 @@ interface Result {
 }
 
 export function useLogin() {
-  const { isWrapLoading, setIsWrapLoading } = loginStore();
+  const [searchParams] = useSearchParams();
+  const action = searchParams.get('action');
+
+  const { isWrapLoading, setIsWrapLoading, setAction } = loginStore();
   const { message: antMessage } = App.useApp();
   const { refetch: refreshQrcodeInfo } = useGetQrcode();
   const { isLogined, userInfo, refresh: refreshUserInfo } = useUserLoginInfo();
@@ -29,6 +33,12 @@ export function useLogin() {
     state: '',
   });
   const [shouldBindPhone, setShouldBindPhone] = useState(false);
+
+  useEffect(() => {
+    if (action) {
+      setAction(action);
+    }
+  }, [action]);
 
   useEffect(() => {
     if (message) {
@@ -78,5 +88,6 @@ export function useLogin() {
     shouldBindPhone,
     setLoginMode,
     handleRefresh,
+    action
   };
 }
