@@ -1,6 +1,6 @@
 // src/pages/login/hooks/useAccountForm.ts
 import { Form, App, InputRef } from 'antd';
-import { act, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useBindPhone, useGetSMSCode, useLoginWithSMS } from '@/lib/hooks/api/login';
 import { useCountdown } from '@/lib/hooks/code-countdown';
 import { redirectToRedirectBackURL } from '@/lib/utils/utils';
