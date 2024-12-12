@@ -7,9 +7,12 @@ import { AccountForm } from './component/account-form';
 import { isWeChatBrowser } from '@/lib/utils/utils';
 import { UserInfo } from "./component/user-info";
 import { useLogin } from './hooks/useLoginPage';
+import { useMemo } from 'react';
+import { LoginResult } from './component/login-result';
 
 function Login() {
   const {
+    action,
     isWrapLoading,
     isLogined,
     userInfo,
@@ -34,6 +37,9 @@ function Login() {
 
   const getBoxHeight = () => {
     if (isLogined) {
+      if (action === 'bind') {
+        return 'h-[220px]';
+      }
       return 'h-[180px]';
     }
     if (loginMode === 'wechat' && isWeChatBrowser()) {
@@ -44,6 +50,24 @@ function Login() {
     }
     return 'h-[310px]';
   };
+
+  const loginContent = useMemo(() => {
+    if (isLogined) {
+      if (action === 'bind') {
+        return <LoginResult action={action} />;
+      }
+      return <UserInfo userInfo={userInfo} refresh={handleRefresh} />;
+    } else {
+      return <Tabs
+        className="login-tabs"
+        items={items}
+        type="card"
+        onChange={loginMode => {
+          setLoginMode(loginMode);
+        }}
+      />
+    }
+  }, [isLogined, loginMode, items, setLoginMode, action]);
 
   return (
     <div className="relative flex h-screen w-screen select-none items-center justify-center overflow-hidden bg-black">
@@ -69,14 +93,7 @@ function Login() {
               getBoxHeight(),
             )}
           >
-            {isLogined ? <UserInfo userInfo={userInfo} refresh={handleRefresh} /> : <Tabs
-              className="login-tabs"
-              items={items}
-              type="card"
-              onChange={loginMode => {
-                setLoginMode(loginMode);
-              }}
-            />}
+            {loginContent}
           </div>
         </Spin>
       </div>
