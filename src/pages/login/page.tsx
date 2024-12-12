@@ -73,7 +73,7 @@ function Login() {
     <div className="relative flex h-screen w-screen select-none items-center justify-center overflow-hidden bg-black">
       <div className="flex justify-center items-center absolute top-0 h-full">
         <img
-          className="transform flex-shrink-0 animate-ping-slow origin-center"
+          className="transform flex-shrink-0 animate-ping-slow origin-center sm:max-w-[150vw] sm:min-w-[150vw]"
           src={LoginBackground}
           alt=""
         />
