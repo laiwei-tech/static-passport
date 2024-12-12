@@ -36,7 +36,7 @@ export function useLogin() {
 
   useEffect(() => {
     setRefreshUserInfo(refreshUserInfo);
-  }, [refreshUserInfo]);
+  }, []);
 
   useEffect(() => {
     if (action) {
