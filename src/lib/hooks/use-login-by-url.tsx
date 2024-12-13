@@ -19,6 +19,7 @@ function useLoginByUrl(refresh: () => void) {
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
     const state = urlParams.get('state');
+    const action = urlParams.get('action');
     
     if (code && state) {
       const qrcodeResult: Result = { code, state };
@@ -28,7 +29,9 @@ function useLoginByUrl(refresh: () => void) {
           sessionStorage.setItem('isLoginByPassport', 'true');
           refresh();
         } else {
-          message.warning('请输入手机号进行账号绑定');
+          if (action === 'bind') {
+            message.warning('请输入手机号进行账号绑定');
+          }
         }
       }).finally(() => {
         // 删除code和state参数，保留其他参数

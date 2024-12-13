@@ -162,26 +162,23 @@ export const useBindPhone = () => {
     code: string;
   }) => {
     const res = await publicClient.bindPhone({
-      providerType: Auth_Provider_Type_Enum.WECHAT_WEBSITE_APP,
+      providerType: Auth_Provider_Type_Enum.WECHAT_OFFICIAL_ACCOUNT,
       providerId: {
         provider: {
-          case: 'wechatWebsiteApp',
+          case: 'wechatOfficialAccount',
           value: {
-            appId: WECHAT_WEBSITE_APP_ID,
+            appId: getAppId(),
           },
         },
       },
       providerRequest: {
         provider: {
-          case: 'wechatWebsiteApp',
-          value: {
-            // @ts-ignore
-            phone
-          }
+          case: 'wechatOfficialAccount',
+          value: {}
         },
-        phone,
-        smsCode: code,
       },
+      phone: phone,
+      smsCode: code,
     });
 
     return res;

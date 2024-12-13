@@ -6,7 +6,7 @@ import './page.less';
 import { AccountForm } from './component/account-form';
 import { isWeChatBrowser } from '@/lib/utils/utils';
 import { UserInfo } from "./component/user-info";
-import { useLogin } from './hooks/useLoginPage';
+import { useLogin } from './hooks/use-login-page';
 import { useMemo } from 'react';
 import { LoginResult } from './component/login-result';
 
@@ -73,7 +73,7 @@ function Login() {
     <div className="relative flex h-screen w-screen select-none items-center justify-center overflow-hidden bg-black">
       <div className="flex justify-center items-center absolute top-0 h-full">
         <img
-          className="transform flex-shrink-0 animate-ping-slow origin-center sm:max-w-[150vw] sm:min-w-[150vw]"
+          className="transform flex-shrink-0 animate-ping-slow origin-center"
           src={LoginBackground}
           alt=""
         />
