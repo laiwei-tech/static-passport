@@ -60,6 +60,7 @@ function Login() {
     } else {
       return <Tabs
         className="login-tabs"
+        activeKey={loginMode}
         items={items}
         type="card"
         onChange={loginMode => {

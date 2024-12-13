@@ -75,7 +75,10 @@ export function useLogin() {
     } else {
       setShouldBindPhone(true);
       setLoginMode('phone');
-      antMessage.info('请绑定手机号');
+      antMessage.info({
+        content: '请绑定手机号',
+        duration: 10000
+      });
     }
   };
 
