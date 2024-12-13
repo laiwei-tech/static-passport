@@ -23,7 +23,7 @@ function Login() {
   } = useLogin();
 
   const items: TabsProps['items'] = [
-    ...(!isWeChatBrowser()
+    ...((!isWeChatBrowser() || !shouldBindPhone)
       ? [
           {
             key: 'wechat',
@@ -34,7 +34,7 @@ function Login() {
       : []),
     {
       key: 'phone',
-      label: '账号登录',
+      label: shouldBindPhone ? '绑定手机' : '账号登录',
       children: <AccountForm isBind={shouldBindPhone} />,
     },
   ];

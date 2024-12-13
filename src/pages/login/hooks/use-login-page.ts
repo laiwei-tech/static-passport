@@ -46,6 +46,7 @@ export function useLogin() {
 
   useEffect(() => {
     if (message) {
+      setIsWrapLoading(true);
       setQrcodeResult(message);
     }
   }, [message]);
@@ -68,6 +69,8 @@ export function useLogin() {
 
     setLoading(true);
     const { user } = await loginByWechatCodeMutation.mutateAsync(qrcodeResult);
+
+    setIsWrapLoading(false);
 
     if (user) {
       sessionStorage.setItem('isLoginByPassport', 'true');
