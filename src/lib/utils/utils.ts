@@ -1,11 +1,11 @@
-import { UUID } from "uuidjs";
-import { privateClient } from "./client";
+import { UUID } from 'uuidjs';
+import { privateClient } from './client';
 
 export const getDeviceId = () => {
-  let uuid = localStorage.getItem("uuid");
+  let uuid = localStorage.getItem('uuid');
   if (!uuid) {
     uuid = UUID.genV6().toString();
-    localStorage.setItem("uuid", uuid);
+    localStorage.setItem('uuid', uuid);
   }
   return uuid;
 };
@@ -28,7 +28,7 @@ export const redirectToRedirectBackURL = async () => {
     redirectURLWithCode.searchParams.set('passport_code', passportCode);
     window.location.href = redirectURLWithCode.toString();
   }
-}
+};
 
 export const formatPhone = (phone: string | undefined) => {
   if (!phone) return '';
@@ -44,21 +44,29 @@ export const formatPhone = (phone: string | undefined) => {
 
 export const isWeChatBrowser = () => {
   const userAgent = navigator.userAgent.toLowerCase();
-  return userAgent.indexOf("micromessenger") !== -1;
-}
+  return userAgent.indexOf('micromessenger') !== -1;
+};
 
 export const getIsDev = () => {
-  let envVersion = "production";
+  let envVersion = 'production';
   if (window.location.host === 'fe.dev.laiwei.tech' || window.location.host === 'localhost:7007') {
-    envVersion = "develop";
+    envVersion = 'develop';
   }
   return envVersion;
-}
+};
 
 export const getAppId = () => {
-  const isDev = getIsDev();
-  if (isDev === "develop") {
-    return "wxa38adb8ac1910b11";
+  // 先尝试从 URL 参数获取 appId
+  const urlParams = new URLSearchParams(window.location.search);
+  const urlAppId = urlParams.get('appId');
+  if (urlAppId) {
+    return urlAppId;
   }
-  return "wxdd953231cca7f46e";
-}
+
+  // 如果 URL 中没有 appId，则使用默认逻辑
+  const isDev = getIsDev();
+  if (isDev === 'develop') {
+    return 'wxa38adb8ac1910b11';
+  }
+  return 'wxdd953231cca7f46e';
+};

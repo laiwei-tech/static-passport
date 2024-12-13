@@ -4,7 +4,7 @@ import { App } from 'antd';
 import { useGetQrcode, useLoginByWechatCode } from '@/lib/hooks/api/login';
 import useMessageEventListener from '@/lib/hooks/use-message-event-listener';
 import { isWeChatBrowser, redirectToRedirectBackURL } from '@/lib/utils/utils';
-import { useUserLoginInfo } from "@/lib/hooks/user-login-info";
+import { useUserLoginInfo } from '@/lib/hooks/user-login-info';
 import useLoginByUrl from '@/lib/hooks/use-login-by-url';
 import { loginStore } from '../store';
 import { useSearchParams } from 'react-router-dom';
@@ -65,10 +65,10 @@ export function useLogin() {
 
   const handleLoginByWechatCode = async () => {
     if (loading) return;
-    
+
     setLoading(true);
     const { user } = await loginByWechatCodeMutation.mutateAsync(qrcodeResult);
-    
+
     if (user) {
       sessionStorage.setItem('isLoginByPassport', 'true');
       redirectToRedirectBackURL();
@@ -77,7 +77,7 @@ export function useLogin() {
       setLoginMode('phone');
       antMessage.info({
         content: '请绑定手机号',
-        duration: 10
+        duration: 10,
       });
     }
   };
@@ -95,6 +95,6 @@ export function useLogin() {
     shouldBindPhone,
     setLoginMode,
     handleRefresh,
-    action
+    action,
   };
 }

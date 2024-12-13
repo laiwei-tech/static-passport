@@ -4,16 +4,8 @@ import { PHONE_CODE } from '@/lib/constant/phone-code';
 import { FieldType, useAccountForm } from '../hooks/use-account-form';
 
 export const AccountForm = ({ isBind }: { isBind: boolean }) => {
-  const {
-    form,
-    loading,
-    loginLoading,
-    count,
-    isCounting,
-    inputRef,
-    handleSendCode,
-    onFinish
-  } = useAccountForm(isBind);
+  const { form, loading, loginLoading, count, isCounting, inputRef, handleSendCode, onFinish } =
+    useAccountForm(isBind);
 
   return (
     <div className="p-5">
@@ -45,7 +37,12 @@ export const AccountForm = ({ isBind }: { isBind: boolean }) => {
         >
           <Row gutter={8}>
             <Col span={16}>
-              <Input ref={inputRef} size="large" prefix={<LockOutlined />} placeholder="请输入验证码" />
+              <Input
+                ref={inputRef}
+                size="large"
+                prefix={<LockOutlined />}
+                placeholder="请输入验证码"
+              />
             </Col>
             <Col span={8}>
               <Button

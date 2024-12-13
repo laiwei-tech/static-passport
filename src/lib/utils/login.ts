@@ -1,6 +1,6 @@
-import { Auth_Provider_Type_Enum } from "@/gen/laiweiv1/model_pb";
-import { publicClient } from "./client";
-import { getAppId } from "./utils";
+import { Auth_Provider_Type_Enum } from '@/gen/laiweiv1/model_pb';
+import { publicClient } from './client';
+import { getAppId } from './utils';
 
 export interface WxLoginOptions {
   self_redirect?: boolean;
@@ -45,7 +45,7 @@ export function WxLogin(options: WxLoginOptions): void {
 
   iframe.src = src;
   iframe.frameBorder = '0';
-//   iframe.allowTransparency = true;
+  //   iframe.allowTransparency = true;
   iframe.scrolling = 'no';
   iframe.width = '300px';
   iframe.height = '400px';
@@ -64,7 +64,7 @@ export const h5WxLogin = async () => {
     providerType: Auth_Provider_Type_Enum.WECHAT_OFFICIAL_ACCOUNT,
     providerId: {
       provider: {
-        case: "wechatOfficialAccount",
+        case: 'wechatOfficialAccount',
         value: {
           appId: getAppId(),
         },
@@ -72,19 +72,21 @@ export const h5WxLogin = async () => {
     },
     providerRequest: {
       provider: {
-        case: "wechatOfficialAccount",
+        case: 'wechatOfficialAccount',
         value: {},
       },
-    }
-  })
+    },
+  });
 
   const appId = getAppId();
   const redirectUrl = window.location.href;
-  const callbackState = providerResponse?.provider.case === "wechatOfficialAccount" ? providerResponse?.provider.value?.state : "";
-  const scopeType = "snsapi_base";
+  const callbackState =
+    providerResponse?.provider.case === 'wechatOfficialAccount'
+      ? providerResponse?.provider.value?.state
+      : '';
+  const scopeType = 'snsapi_base';
   const url = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${appId}&redirect_uri=${encodeURIComponent(
-    redirectUrl
+    redirectUrl,
   )}&response_type=code&scope=${scopeType}&state=${callbackState}#wechat_redirect`;
   window.location.href = url;
-}
-
+};

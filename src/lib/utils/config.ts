@@ -1,7 +1,7 @@
 export const isDev = () => {
   if (
-    window.location.host === "fe.dev.laiwei.tech" ||
-    window.location.host.indexOf("localhost") !== -1
+    window.location.host === 'fe.dev.laiwei.tech' ||
+    window.location.host.indexOf('localhost') !== -1
   ) {
     return true;
   }
@@ -10,8 +10,8 @@ export const isDev = () => {
 
 export const getBaseUrl = () => {
   if (isDev()) {
-    return "https://api.dev.laiwei.tech";
+    return 'https://api.dev.laiwei.tech';
   } else {
-    return "https://api.laiwei.tech";
+    return 'https://api.laiwei.tech';
   }
 };

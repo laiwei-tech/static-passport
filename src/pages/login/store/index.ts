@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
 interface LoginStore {
   isWrapLoading: boolean;
@@ -9,7 +9,7 @@ interface LoginStore {
   setRefreshUserInfo: (refreshUserInfo: () => void) => void;
 }
 
-export const loginStore = create<LoginStore>((set) => ({
+export const loginStore = create<LoginStore>(set => ({
   isWrapLoading: false,
   setIsWrapLoading: (isWrapLoading: boolean) => set({ isWrapLoading }),
   action: '',
