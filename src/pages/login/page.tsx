@@ -23,7 +23,7 @@ function Login() {
   } = useLogin();
 
   const items: TabsProps['items'] = [
-    ...((!isWeChatBrowser() || !shouldBindPhone)
+    ...((!isWeChatBrowser() && !shouldBindPhone)
       ? [
           {
             key: 'wechat',
