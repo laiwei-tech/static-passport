@@ -34,7 +34,7 @@ function Login() {
       : []),
     {
       key: 'phone',
-      label: shouldBindPhone ? '绑定手机' : '账号登录',
+      label: (shouldBindPhone || action === 'bind') ? '绑定手机' : '账号登录',
       children: <AccountForm isBind={shouldBindPhone} />,
     },
   ];

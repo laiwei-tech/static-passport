@@ -24,6 +24,7 @@ export const AccountForm = ({ isBind }: { isBind: boolean }) => {
         >
           <Input
             size="large"
+            type="number"
             prefix={<MobileOutlined />}
             placeholder="请输入手机号"
             addonBefore={prefixSelector}
@@ -40,6 +41,7 @@ export const AccountForm = ({ isBind }: { isBind: boolean }) => {
               <Input
                 ref={inputRef}
                 size="large"
+                type="number"
                 prefix={<LockOutlined />}
                 placeholder="请输入验证码"
               />
