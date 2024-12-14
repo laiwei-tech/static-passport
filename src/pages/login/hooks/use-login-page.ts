@@ -4,7 +4,7 @@ import { App } from 'antd';
 import { useGetQrcode, useLoginByWechatCode } from '@/lib/hooks/api/login';
 import useMessageEventListener from '@/lib/hooks/use-message-event-listener';
 import { isWeChatBrowser, redirectToRedirectBackURL } from '@/lib/utils/utils';
-import { useUserLoginInfo } from "@/lib/hooks/user-login-info";
+import { useUserLoginInfo } from '@/lib/hooks/user-login-info';
 import useLoginByUrl from '@/lib/hooks/use-login-by-url';
 import { loginStore } from '../store';
 import { useSearchParams } from 'react-router-dom';
@@ -46,6 +46,7 @@ export function useLogin() {
 
   useEffect(() => {
     if (message) {
+      setIsWrapLoading(true);
       setQrcodeResult(message);
     }
   }, [message]);
@@ -65,17 +66,22 @@ export function useLogin() {
 
   const handleLoginByWechatCode = async () => {
     if (loading) return;
-    
+
     setLoading(true);
     const { user } = await loginByWechatCodeMutation.mutateAsync(qrcodeResult);
-    
+
+    setIsWrapLoading(false);
+
     if (user) {
       sessionStorage.setItem('isLoginByPassport', 'true');
       redirectToRedirectBackURL();
     } else {
       setShouldBindPhone(true);
       setLoginMode('phone');
-      antMessage.info('请绑定手机号');
+      antMessage.info({
+        content: '请绑定手机号',
+        duration: 10,
+      });
     }
   };
 
@@ -92,6 +98,6 @@ export function useLogin() {
     shouldBindPhone,
     setLoginMode,
     handleRefresh,
-    action
+    action,
   };
 }

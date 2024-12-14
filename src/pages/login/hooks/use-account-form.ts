@@ -1,7 +1,7 @@
 // src/pages/login/hooks/useAccountForm.ts
 import { Form, App, InputRef } from 'antd';
 import { useRef, useState } from 'react';
-import { useBindPhone, useGetSMSCode, useLoginWithSMS } from '@/lib/hooks/api/login';
+import { useBindPhone, useBindPhoneByApp, useGetSMSCode, useLoginWithSMS } from '@/lib/hooks/api/login';
 import { useCountdown } from '@/lib/hooks/code-countdown';
 import { redirectToRedirectBackURL } from '@/lib/utils/utils';
 import { loginStore } from '../store';
@@ -16,6 +16,7 @@ export const useAccountForm = (isBind: boolean) => {
   const { message } = App.useApp();
   const { action, refreshUserInfo } = loginStore();
   const bindPhoneMutation = useBindPhone();
+  const bindPhoneByAppMutation = useBindPhoneByApp();
   const loginWithSMSMutation = useLoginWithSMS();
   const getSMSCodeMutation = useGetSMSCode();
 
@@ -51,9 +52,30 @@ export const useAccountForm = (isBind: boolean) => {
   };
 
   const onFinish = (values: FieldType) => {
-    if ((isBind || action === 'bind') && values.code) {
+    // 公众号绑定流程
+    if (action === 'bind' && values.code) {
       setLoginLoading(true);
       bindPhoneMutation
+        .mutateAsync({
+          phone: `${values.phone_code} ${values.phone_number}`,
+          code: values.code,
+        })
+        .then(() => {
+          sessionStorage.setItem('isLoginByPassport', 'true');
+          if (action === 'bind') {
+            refreshUserInfo();
+          } else {
+            message.success('绑定成功');
+            redirectToRedirectBackURL();
+          }
+        })
+        .finally(() => {
+          setLoginLoading(false);
+        });
+    } else if (isBind && values.code) {
+      // 绑定website-app流程
+      setLoginLoading(true);
+      bindPhoneByAppMutation
         .mutateAsync({
           phone: `${values.phone_code} ${values.phone_number}`,
           code: values.code,

@@ -184,3 +184,32 @@ export const useBindPhone = () => {
     return res;
   });
 };
+
+export const useBindPhoneByApp = () => {
+  return useMutation(async ({ phone, code }: {
+    phone: string;
+    code: string;
+  }) => {
+    const res = await publicClient.bindPhone({
+      providerType: Auth_Provider_Type_Enum.WECHAT_WEBSITE_APP,
+      providerId: {
+        provider: {
+          case: 'wechatWebsiteApp',
+          value: {
+            appId: WECHAT_WEBSITE_APP_ID,
+          },
+        },
+      },
+      providerRequest: {
+        provider: {
+          case: 'wechatWebsiteApp',
+          value: {}
+        },
+      },
+      phone: phone,
+      smsCode: code,
+    });
+
+    return res;
+  });
+};

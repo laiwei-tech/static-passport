@@ -17,28 +17,35 @@ export const connectTransport = (basePath: string, noPrompt: boolean = false) =>
     baseUrl: `${getBaseUrl()}/grpc/${basePath}`,
     fetch: (input, init) => {
       return new Promise((resolve, reject) => {
-        axios.request({
-          url: `${input}`,
-          method: init?.method,
-          headers: getHeader(`${input}`, init) as unknown as AxiosHeaders,
-          data: init?.body,
-          withCredentials: true,
-          // @ts-ignore
-          hideErrorMessage: noPrompt,
-        }).then((res) => {
-          resolve(new Response(JSON.stringify(res.data), {
-            status: res.status,
-            statusText: res.statusText,
-            headers: new Headers(res.headers as HeadersInit),
-          }));
-        }).catch((res) => {
-          reject(new Response(JSON.stringify(res.data), {
-            status: res.status,
-            statusText: res.statusText,
-            headers: new Headers(res.headers as HeadersInit),
-          }));
-        })
-      })
+        axios
+          .request({
+            url: `${input}`,
+            method: init?.method,
+            headers: getHeader(`${input}`, init) as unknown as AxiosHeaders,
+            data: init?.body,
+            withCredentials: true,
+            // @ts-ignore
+            hideErrorMessage: noPrompt,
+          })
+          .then(res => {
+            resolve(
+              new Response(JSON.stringify(res.data), {
+                status: res.status,
+                statusText: res.statusText,
+                headers: new Headers(res.headers as HeadersInit),
+              }),
+            );
+          })
+          .catch(res => {
+            reject(
+              new Response(JSON.stringify(res.data), {
+                status: res.status,
+                statusText: res.statusText,
+                headers: new Headers(res.headers as HeadersInit),
+              }),
+            );
+          });
+      });
     },
   });
 };
@@ -57,5 +64,7 @@ export const pushClient = createClient(PushService, connectTransport('push'));
 // 预订接口
 export const bookingClient = createClient(BookingService, connectTransport('booking'));
 // 私有接口（无提示）
-export const privateClientWithoutPrompt = createClient(PrivateService, connectTransport('private', true));
-
+export const privateClientWithoutPrompt = createClient(
+  PrivateService,
+  connectTransport('private', true),
+);

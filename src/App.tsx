@@ -1,6 +1,6 @@
-import { RouterProvider } from "react-router-dom";
-import "./App.less";
-import { router } from "./lib/router";
+import { RouterProvider } from 'react-router-dom';
+import './App.less';
+import { router } from './lib/router';
 
 function App() {
   return <RouterProvider router={router} />;

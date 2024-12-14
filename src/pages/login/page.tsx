@@ -5,7 +5,7 @@ import { Spin, Tabs, TabsProps } from 'antd';
 import './page.less';
 import { AccountForm } from './component/account-form';
 import { isWeChatBrowser } from '@/lib/utils/utils';
-import { UserInfo } from "./component/user-info";
+import { UserInfo } from './component/user-info';
 import { useLogin } from './hooks/use-login-page';
 import { useMemo } from 'react';
 import { LoginResult } from './component/login-result';
@@ -19,18 +19,22 @@ function Login() {
     loginMode,
     shouldBindPhone,
     setLoginMode,
-    handleRefresh
+    handleRefresh,
   } = useLogin();
 
   const items: TabsProps['items'] = [
-    ...(!isWeChatBrowser() ? [{
-      key: 'wechat',
-      label: '微信登录',
-      children: <div id="login-wechat-qrcode" className="flex justify-center"></div>,
-    }] : []),
+    ...((!isWeChatBrowser() && !shouldBindPhone)
+      ? [
+          {
+            key: 'wechat',
+            label: '微信登录',
+            children: <div id="login-wechat-qrcode" className="flex justify-center"></div>,
+          },
+        ]
+      : []),
     {
       key: 'phone',
-      label: '账号登录',
+      label: (shouldBindPhone || action === 'bind') ? '绑定手机' : '账号登录',
       children: <AccountForm isBind={shouldBindPhone} />,
     },
   ];
@@ -58,22 +62,25 @@ function Login() {
       }
       return <UserInfo userInfo={userInfo} refresh={handleRefresh} />;
     } else {
-      return <Tabs
-        className="login-tabs"
-        items={items}
-        type="card"
-        onChange={loginMode => {
-          setLoginMode(loginMode);
-        }}
-      />
+      return (
+        <Tabs
+          className="login-tabs"
+          activeKey={loginMode}
+          items={items}
+          type="card"
+          onChange={loginMode => {
+            setLoginMode(loginMode);
+          }}
+        />
+      );
     }
   }, [isLogined, loginMode, items, setLoginMode, action]);
 
   return (
     <div className="relative flex h-screen w-screen select-none items-center justify-center overflow-hidden bg-black">
-      <div className="flex justify-center items-center absolute top-0 h-full">
+      <div className="absolute top-0 flex h-full items-center justify-center">
         <img
-          className="transform flex-shrink-0 animate-ping-slow origin-center"
+          className="flex-shrink-0 origin-center transform animate-ping-slow"
           src={LoginBackground}
           alt=""
         />
