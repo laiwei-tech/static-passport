@@ -58,7 +58,7 @@ export const getIsDev = () => {
 export const getAppId = () => {
   // 先尝试从 URL 参数获取 appId
   const urlParams = new URLSearchParams(window.location.search);
-  const urlAppId = urlParams.get('appId');
+  const urlAppId = urlParams.get('app_id');
   if (urlAppId) {
     return urlAppId;
   }
