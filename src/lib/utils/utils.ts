@@ -17,12 +17,10 @@ export const redirectToRedirectBackURL = async () => {
   // 获取code并跳转
   const { passportCode } = await privateClient.sharedCreateSessionLaiweiPassportCode({});
 
-  if (passportCode) {
+  if (passportCode && !redirectBackURL) {
     localStorage.setItem('isLoginedInPassport', 'true');
     window.location.reload();
-  }
-
-  if (redirectBackURL && passportCode) {
+  } else if (redirectBackURL && passportCode) {
     // 添加 passportCode 到重定向URL
     const redirectURLWithCode = new URL(redirectBackURL);
     redirectURLWithCode.searchParams.set('passport_code', passportCode);

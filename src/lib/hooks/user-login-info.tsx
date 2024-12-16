@@ -10,7 +10,7 @@ export const useUserLoginInfo = () => {
   useEffect(() => {
     const isLoginedInPassport = localStorage.getItem('isLoginedInPassport');
 
-    if (isLoginedInPassport && !sessionStorage.getItem('isLoginByPassport')) {
+    if (isLoginedInPassport) {
       getUserInfo();
     } else {
       setIsLogined(false);

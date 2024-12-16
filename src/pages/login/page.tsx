@@ -99,6 +99,7 @@ function Login() {
               'w-[380px] overflow-hidden rounded-[10px] bg-white transition-all duration-300',
               getBoxHeight(),
             )}
+            style={{ transition: 'all 0.3s' }}
           >
             {loginContent}
           </div>
